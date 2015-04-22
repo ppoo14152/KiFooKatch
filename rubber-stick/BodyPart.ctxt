@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=start\ end
+comment0.target=BodyPart(SoftPoint,\ SoftPoint)
+comment1.params=image\ start\ end
+comment1.target=BodyPart(java.lang.String,\ SoftPoint,\ SoftPoint)
+comment2.params=start\ end\ xOffs\ yOffs
+comment2.target=BodyPart(SoftPoint,\ SoftPoint,\ int,\ int)
+comment3.params=imageName\ start\ end\ xOffs\ yOffs
+comment3.target=BodyPart(java.lang.String,\ SoftPoint,\ SoftPoint,\ int,\ int)
+comment4.params=image\ start\ end\ xOffs\ yOffs
+comment4.target=BodyPart(greenfoot.GreenfootImage,\ SoftPoint,\ SoftPoint,\ int,\ int)
+comment5.params=image
+comment5.target=void\ useImage(greenfoot.GreenfootImage)
+comment5.text=\n\ Use\ a\ new\ image\ as\ the\ base\ image\ for\ this\ body\ part.\n
+comment6.params=
+comment6.target=void\ act()
+comment6.text=\n\ Act\ -\ do\ whatever\ the\ BodyPart\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment7.params=
+comment7.target=void\ dontStretch()
+comment8.params=
+comment8.target=void\ adjustImage()
+comment8.text=\n\ Adjust\ this\ image\ to\ fit\ it's\ two\ end\ points\ (i.e.\ position,\ stretch\ and\ \n\ rotate\ as\ required).\n
+numComments=9
