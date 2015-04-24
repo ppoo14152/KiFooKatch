@@ -3,6 +3,4 @@ comment0.params=
 comment0.target=MyWorld()
 comment1.params=
 comment1.target=void\ act()
-comment2.params=ID
-comment2.target=UserData\ getUser(int)
-numComments=3
+numComments=2

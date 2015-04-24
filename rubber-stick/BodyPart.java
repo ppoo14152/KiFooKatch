@@ -88,6 +88,9 @@ public class BodyPart extends Actor
         setRotation((int) (180 * Math.atan2(deltaY, deltaX) / Math.PI) - 90);        
         setLocation (midX+xOffset, midY+yOffset);
     }
+    public void metodo1(){
+    //whatevs
+    }
 
 }
 
