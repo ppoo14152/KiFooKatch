@@ -91,6 +91,9 @@ public class BodyPart extends Actor
     public void metodo1(){
     //whatevs
     }
+    public void metodo3(){
+    //whatevs
+    }
 
 }
 
