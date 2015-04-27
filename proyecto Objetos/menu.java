@@ -1,54 +1,27 @@
 import greenfoot.*;
 
 /**
- * Write a description of class menu here.
+ * Write a description of class Menu here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class menu extends World
+public class Menu extends World
 {
 
     /**
-     * Constructor for objects of class menu.
+     * Constructor for objects of class Menu.
      * 
      */
-    public menu()
+    Boton bStart;
+    public Menu()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-         super(800, 600, 1); 
-         
-         humano h= new humano();
-         creaComida();
-         addObject(h,400,500);
-         setBackground("back.jpg");
-          
+        super(600, 400, 1); 
+        bStart=new Start();
+        dibujaBotones();
     }
-    public void creaComida(){
-       int i=0;
-       int rand;
-       
-       Comida varObjeto=new Comida();
-       for(i=0;i<10;i++){
-            rand=Greenfoot.getRandomNumber(5);
-            switch(rand){
-             case 1:varObjeto=new Hamburguesa();
-                   addObject(varObjeto,(Greenfoot.getRandomNumber(8)*100),30);
-             break;
-             case 2:varObjeto=new Naranja();
-                    addObject(varObjeto,(Greenfoot.getRandomNumber(8)*100),30); 
-             break;
-             case 3:varObjeto= new Cheetos();
-                    addObject(varObjeto,(Greenfoot.getRandomNumber(8)*100),30);
-             break;
-             case 4:varObjeto= new Platano();
-                    addObject(varObjeto,(Greenfoot.getRandomNumber(8)*100),30);
-             break; 
-              
-            }
-            
-            }
-         
-       
+    public void dibujaBotones(){
+       addObject(bStart,100,100);
     }
 }

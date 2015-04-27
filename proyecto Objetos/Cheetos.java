@@ -21,7 +21,7 @@ public class Cheetos extends ComidaMala
      super.cae();
     }
     public GreenfootImage imagen(){
-      GreenfootImage i =getImage();
+      GreenfootImage i=getImage();
       i.scale(70,50);
       return i;
     
