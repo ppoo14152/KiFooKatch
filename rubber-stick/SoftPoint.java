@@ -40,6 +40,9 @@ public class SoftPoint
     {
         yOffset = offset;
     }
+     /**
+     * Define an offset for the reported position from the actual position in the x axis.
+     */
     public void setXOffset(double offset)
     {
         xOffset = offset;

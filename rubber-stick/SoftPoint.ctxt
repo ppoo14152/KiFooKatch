@@ -10,6 +10,7 @@ comment2.target=void\ setYOffset(double)
 comment2.text=\r\n\ Define\ an\ offset\ for\ the\ reported\ position\ from\ the\ actual\ position\ in\ the\ y\ axis.\r\n
 comment3.params=offset
 comment3.target=void\ setXOffset(double)
+comment3.text=\r\n\ Define\ an\ offset\ for\ the\ reported\ position\ from\ the\ actual\ position\ in\ the\ x\ axis.\r\n
 comment4.params=
 comment4.target=void\ move()
 comment4.text=\r\n\ Move\ towards\ the\ target.\r\n

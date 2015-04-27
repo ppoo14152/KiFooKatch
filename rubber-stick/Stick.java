@@ -12,8 +12,8 @@ public class Stick  extends Actor
     private static final GreenfootImage seeUser = new GreenfootImage("see-user.png");
 
     //                    HEAD/NECK/TORS/L-SH/L-EB/L-HD/R-SH/R-EB/R-HD/L-HP/L-KN/L-FT/R-HP/R-KN/R-FT
-    float[] defaultX   = {400, 400, 400, 365, 325, 360, 435, 500, 450, 375, 355, 380, 425, 445, 425};
-    float[] defaultY   = {155, 215, 305, 215, 285, 350, 215, 275, 340, 335, 415, 520, 335, 415, 520};
+    float[] defaultX   = {400, 400, 400, 310, 310, 310, 490, 490, 490, 375, 355, 380, 425, 445, 425};
+    float[] defaultY   = {100, 215, 305, 255, 310, 380, 255, 310, 380, 335, 415, 520, 335, 415, 520};
 
     //                    HEAD/NECK/TORS/L-SH/L-EB/L-HD/R-SH/R-EB/R-HD/L-HP/L-KN/L-FT/R-HP/R-KN/R-FT
     float[] calibrateX = {400, 400, 400, 365, 290, 255, 435, 510, 550, 375, 355, 370, 425, 445, 435};
@@ -138,22 +138,22 @@ public class Stick  extends Actor
         dot[15].setXOffset(x2);
        
        
-        body[1] = new BodyPart("centre.png",dot[1], dot[2]);                  // body centre
+        body[1] = new BodyPart("cuerpo.png",dot[1], dot[2]);                  // body centre
         body[2] = new BodyPart("leftarm.png",dot[3], dot[4]);                  // left arm
         body[3] = new BodyPart("rightarm.png",dot[6], dot[7]);                  // right arm
-        body[4] = new BodyPart("left-hand.png", dot[5], dot[4]);
-        body[5] = new BodyPart("right-hand.png", dot[8], dot[7]);
-        body[6] = new BodyPart("leftleg.png",dot[2], dot[10]);                     // left leg
-        body[7] = new BodyPart("rightleg.png",dot[2], dot[13]);                     // right leg
-        body[8] = new BodyPart("left-foot.png", dot[10], dot[11]);
-        body[9] = new BodyPart("right-foot.png", dot[13], dot[14]);
+        body[4] = new BodyPart("lefthand.png", dot[5], dot[4]);
+        body[5] = new BodyPart("righthand.png", dot[8], dot[7]);
+        //body[6] = new BodyPart("leftleg.png",dot[2], dot[10]);                     // left leg
+       // body[7] = new BodyPart("rightleg.png",dot[2], dot[13]);                     // right leg
+        //body[8] = new BodyPart("left-foot.png", dot[10], dot[11]);
+        //body[9] = new BodyPart("right-foot.png", dot[13], dot[14]);
          body[0] = new BodyPart("head0.png", dot[0], dot[1], 0, 0);    // head
           body[0].dontStretch();
           // body[6].dontStretch();
             //body[7].dontStretch();
           
 
-        for (int i = 0; i < body.length; i++) {
+        for (int i = 0; i < body.length-4; i++) {
             world.addObject(body[i], world.getWidth()/2, world.getHeight()/2);
         }
     }
