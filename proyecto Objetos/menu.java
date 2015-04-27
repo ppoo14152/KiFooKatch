@@ -22,6 +22,6 @@ public class Menu extends World
         dibujaBotones();
     }
     public void dibujaBotones(){
-       addObject(bStart,100,100);
+       addObject(bStart,100,300);
     }
 }

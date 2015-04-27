@@ -16,7 +16,7 @@ public class Start extends Boton
     
     public Start(){
        w=new Mundo(); 
-       super.imagen(); 
+       super.imagen(150,150); 
     }
     public void act() 
     {
