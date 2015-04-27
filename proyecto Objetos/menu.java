@@ -13,11 +13,11 @@ public class Menu extends World
      * Constructor for objects of class Menu.
      * 
      */
-    Boton bStart;
+    private Boton bStart;
     public Menu()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(800, 600, 1); 
         bStart=new Start();
         dibujaBotones();
     }

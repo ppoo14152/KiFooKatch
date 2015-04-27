@@ -15,5 +15,11 @@ public class Boton extends Actor
     public Boton() 
     {
         setImage("plato.png");// Add your action code here.
-    }    
+    }
+    public GreenfootImage imagen(){
+      GreenfootImage i=getImage();
+      i.scale(200,200);
+      return i;
+    
+    }
 }
