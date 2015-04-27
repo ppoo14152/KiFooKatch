@@ -16,9 +16,8 @@ public class Stick  extends Actor
     float[] defaultY   = {100, 215, 305, 255, 310, 380, 255, 310, 380, 335, 415, 520, 335, 415, 520};
 
     //                    HEAD/NECK/TORS/L-SH/L-EB/L-HD/R-SH/R-EB/R-HD/L-HP/L-KN/L-FT/R-HP/R-KN/R-FT
-    float[] calibrateX = {400, 400, 400, 365, 290, 255, 435, 510, 550, 375, 355, 370, 425, 445, 435};
-    float[] calibrateY = {155, 215, 305, 215, 225, 140, 215, 205, 140, 335, 415, 520, 335, 415, 520};
-
+    float[] calibrateX = {400, 400, 400, 310, 310, 310, 490, 490, 490, 375, 355, 380, 425, 445, 425};
+    float[] calibrateY = {100, 215, 305, 255, 310, 380, 255, 310, 380, 335, 415, 520, 335, 415, 520};
 
     private int ID;
     private SoftPoint[] dot;
