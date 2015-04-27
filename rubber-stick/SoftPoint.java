@@ -14,6 +14,7 @@ public class SoftPoint
     private Vector movement;
     private double x;
     private double y;
+    private double xOffset=0;
     private double yOffset = 0;
     private int targetX;
     private int targetY;
@@ -38,6 +39,10 @@ public class SoftPoint
     public void setYOffset(double offset)
     {
         yOffset = offset;
+    }
+    public void setXOffset(double offset)
+    {
+        xOffset = offset;
     }
     
     /**

@@ -77,7 +77,7 @@ public class Stick  extends Actor
             moveALittle();
             trackUser(calibratePose);
         }
-        animateFace();
+     //   animateFace();
     }    
 
     /**
@@ -106,40 +106,52 @@ public class Stick  extends Actor
     {
         if(Greenfoot.getRandomNumber(1000) < 10) 
         {
-            body[0].useImage(heads[Greenfoot.getRandomNumber(heads.length)]);
+            //body[0].useImage(heads[Greenfoot.getRandomNumber(heads.length)]);
+            body[0].useImage(heads[900]);
         }
     }
 
     private void createBody(World world)
     {
         // Create a softPoint to follow each joint position
-        dot = new SoftPoint[Joint.NUM_JOINTS];
-        dot[0] = new SoftPoint(0.01, 0.03);
+        dot = new SoftPoint[Joint.NUM_JOINTS+2];
+        dot[0] = new SoftPoint(0.01, 0.1);
 
         for (int i = 1; i < dot.length; i++) {
             dot[i] = new SoftPoint();
         }
         dot[2].setYOffset(80);  // move centre body point down to use as hip point
+        dot[14].setXOffset(100);
+        dot[15].setXOffset(20);
         
         heads = new GreenfootImage[10];
         for (int i = 0; i < heads.length; i++) {
-            heads[i] = new GreenfootImage("head"+i+".png");
+            heads[i] = new GreenfootImage("head"+".png");
         }
         
         // Create body part between softPoints
         //SoftPoint hip = dot[9].mid(dot[12]);
         body = new BodyPart[10];
-        body[0] = new BodyPart("head0.png", dot[0], dot[1], 0, -70);    // head
-        body[0].dontStretch();
-        body[1] = new BodyPart(dot[1], dot[2]);                  // body centre
-        body[2] = new BodyPart(dot[3], dot[4]);                  // left arm
-        body[3] = new BodyPart(dot[6], dot[7]);                  // right arm
+        int x1=dot[10].getX()-20;
+        int x2=dot[13].getX()+20;
+        dot[14].setXOffset(x1);
+        dot[15].setXOffset(x2);
+       
+       
+        body[1] = new BodyPart("centre.png",dot[1], dot[2]);                  // body centre
+        body[2] = new BodyPart("leftarm.png",dot[3], dot[4]);                  // left arm
+        body[3] = new BodyPart("rightarm.png",dot[6], dot[7]);                  // right arm
         body[4] = new BodyPart("left-hand.png", dot[5], dot[4]);
         body[5] = new BodyPart("right-hand.png", dot[8], dot[7]);
-        body[6] = new BodyPart(dot[2], dot[10]);                     // left leg
-        body[7] = new BodyPart(dot[2], dot[13]);                     // right leg
+        body[6] = new BodyPart("leftleg.png",dot[2], dot[10]);                     // left leg
+        body[7] = new BodyPart("rightleg.png",dot[2], dot[13]);                     // right leg
         body[8] = new BodyPart("left-foot.png", dot[10], dot[11]);
         body[9] = new BodyPart("right-foot.png", dot[13], dot[14]);
+         body[0] = new BodyPart("head0.png", dot[0], dot[1], 0, 0);    // head
+          body[0].dontStretch();
+          // body[6].dontStretch();
+            //body[7].dontStretch();
+          
 
         for (int i = 0; i < body.length; i++) {
             world.addObject(body[i], world.getWidth()/2, world.getHeight()/2);

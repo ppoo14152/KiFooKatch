@@ -17,7 +17,7 @@ public class BodyPart extends Actor
     
     public BodyPart(SoftPoint start, SoftPoint end)
     {
-        this("line.png", start, end);
+        this("torso.png", start, end);
     }
     
     public BodyPart(String image, SoftPoint start, SoftPoint end)
@@ -88,18 +88,6 @@ public class BodyPart extends Actor
         setRotation((int) (180 * Math.atan2(deltaY, deltaX) / Math.PI) - 90);        
         setLocation (midX+xOffset, midY+yOffset);
     }
-    public void metodo1(){
-    //whatevs
-    }
-<<<<<<< .mine
-    public void metodo2(){
-    //whatevs
-    } 
-=======
-    public void metodo3(){
-    //whatevs
-    }
->>>>>>> .r4
 
 }
 
