@@ -1,7 +1,11 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Mundo()
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ menu.\r\n\ \r\n
 comment1.params=
 comment1.target=void\ creaComida()
-numComments=2
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\ public\ GreenfootImage\ imagen(){\r\n\ \ \ \ \ GreenfootImage\ i\=greenfoot.getImage();\r\n\ \ \ \ \ i.scale(800,600);\r\n\ \ \ \ \ return\ i;\r\n\ \ \ \ }\r\n
+comment3.params=ID
+comment3.target=UserData\ getUser(int)
+numComments=4
