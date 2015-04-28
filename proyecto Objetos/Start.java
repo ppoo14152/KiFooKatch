@@ -15,16 +15,23 @@ public class Start extends Boton
    World w=getWorld();
     
     public Start(){
-        w=new Mundo(); 
-       super.imagen(150,150); 
+       w=new Mundo(); 
+       setImage("jugarN.png");
+       super.imagen(300,100); 
     }
     public void act() 
     {
-        if(Greenfoot.mouseMoved(this)){
-         
-         Greenfoot.setWorld(w);
-            
+        if(Greenfoot.mouseMoved(this))
+        {
+          setImage("jugarV.png");
+          super.imagen(300,100);
+          if(Greenfoot.mouseClicked(this))
+          {
+          Greenfoot.setWorld(w);
+        }
         // Add your action code here.
-    }    
+    }
+    else{setImage("jugarN.png");
+       super.imagen(300,100); }
    }
 } 
