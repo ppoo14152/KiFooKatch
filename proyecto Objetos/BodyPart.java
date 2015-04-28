@@ -15,20 +15,14 @@ public class BodyPart extends Actor
     private boolean stretch;
     private GreenfootImage origImage;  // the original (unstretched/-rotated) image
     
-    public BodyPart(SoftPoint start, SoftPoint end)
-    {
-        this("torso.png", start, end);
-    }
+ 
     
     public BodyPart(String image, SoftPoint start, SoftPoint end)
     {
         this(image, start, end, 0, 0);
     }
     
-    public BodyPart(SoftPoint start, SoftPoint end, int xOffs, int yOffs)
-    {
-        this("line.png", start, end, xOffs, yOffs);
-    }
+
     
     public BodyPart(String imageName, SoftPoint start, SoftPoint end, int xOffs, int yOffs)
     {
@@ -80,8 +74,9 @@ public class BodyPart extends Actor
         int deltaY = end.getY() - start.getY();
         
         if (stretch) {
-            int width = img.getWidth();
-            int height = (int) Math.sqrt(deltaX*deltaX + deltaY*deltaY) + 1;
+            int width = img.getWidth()/2;
+            //int height = (int) Math.sqrt(deltaX*deltaX + deltaY*deltaY) + 1;
+            int height=img.getHeight()/2;
             img.scale(width, height);
         }
         setImage(img);

@@ -56,7 +56,7 @@ public class Stick  extends Actor
         }
         else if (user.startedCalibrating()) {
             // user spotted, but not yet tracked
-            setImage("calibrating.png");
+           // setImage("calibrating.png");
         }
         else if (user.isCalibrating()) {
             trackUser(calibratePose);
@@ -80,7 +80,7 @@ public class Stick  extends Actor
     }    
 
     /**
-     * Display a tracked user on screen
+     * Display a tracked user on screen AQUI !!!!!!!!!!!!!!
      */
     private void trackUser(UserData user)
     {
@@ -131,10 +131,10 @@ public class Stick  extends Actor
         // Create body part between softPoints
         //SoftPoint hip = dot[9].mid(dot[12]);
         body = new BodyPart[10];
-        int x1=dot[10].getX()-20;
-        int x2=dot[13].getX()+20;
-        dot[14].setXOffset(x1);
-        dot[15].setXOffset(x2);
+       // int x1=dot[10].getX()-20;
+        //int x2=dot[13].getX()+20;
+        //dot[14].setXOffset(x1);
+        //dot[15].setXOffset(x2);
        
        
         body[1] = new BodyPart("cuerpo.png",dot[1], dot[2]);                  // body centre
@@ -147,9 +147,15 @@ public class Stick  extends Actor
         //body[8] = new BodyPart("left-foot.png", dot[10], dot[11]);
         //body[9] = new BodyPart("right-foot.png", dot[13], dot[14]);
          body[0] = new BodyPart("head0.png", dot[0], dot[1], 0, 0);    // head
-          body[0].dontStretch();
+        /*  body[0].dontStretch();
+          body[1].dontStretch();
+          body[2].dontStretch();
+          body[3].dontStretch();
+          body[4].dontStretch();
+          body[5].dontStretch();
+         // body[1].dontStretch();
           // body[6].dontStretch();
-            //body[7].dontStretch();
+            //body[7].dontStretch();*/
           
 
         for (int i = 0; i < body.length-4; i++) {
