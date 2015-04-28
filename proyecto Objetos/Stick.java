@@ -71,7 +71,7 @@ public class Stick  extends Actor
         }
         else { // seeing user, but not calibrating
             if (getImage() != seeUser) {
-                setImage(seeUser);
+                setImage(seeUser);//aqui cambia escala
             }
             moveALittle();
             trackUser(calibratePose);
@@ -119,7 +119,7 @@ public class Stick  extends Actor
         for (int i = 1; i < dot.length; i++) {
             dot[i] = new SoftPoint();
         }
-        dot[2].setYOffset(80);  // move centre body point down to use as hip point
+        //dot[2].setYOffset(80);  // move centre body point down to use as hip point
         dot[14].setXOffset(100);
         dot[15].setXOffset(20);
         
@@ -166,8 +166,8 @@ public class Stick  extends Actor
         UserData pose = new UserData(-1);
 
         for (int i = 0; i < x.length; i++) {
-            float cx = (float) (x[i] * MyWorld.SCALE);
-            float cy = (float) (y[i] * MyWorld.SCALE);
+            float cx = (float) (x[i] * Mundo.SCALE);
+            float cy = (float) (y[i] * Mundo.SCALE);
             pose.setJoint(i, new Joint(i, 1.0f, null, new Point3D(cx, cy, 0.0f)));
         }
 
