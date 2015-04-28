@@ -14,7 +14,7 @@ public class Mundo extends KinectWorld
      * 
      */
     
-    public static final double SCALE = 1.0;
+    public static final double SCALE = 4.0;
 
     private static final int THUMBNAIL_WIDTH = 80;
     private static final int THUMBNAIL_HEIGHT = 60;

@@ -6,6 +6,7 @@ import greenfoot.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
+
 public class Menu extends World
 {
 
@@ -14,14 +15,19 @@ public class Menu extends World
      * 
      */
     private Boton bStart;
+    private Puntero p;
+    
     public Menu()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(800, 600, 1); 
+        super(800,600,1);
         bStart=new Start();
+        p=new Puntero();
         dibujaBotones();
     }
     public void dibujaBotones(){
        addObject(bStart,100,300);
+       addObject(p,400,400);
     }
+    
 }

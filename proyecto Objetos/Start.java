@@ -23,7 +23,7 @@ public class Start extends Boton
 
     public void act() 
     {
-        if(Greenfoot.mouseMoved(this))
+        if(isTouching(Boton.class))
         {
             t.mark();
             setImage("jugarV.png");
