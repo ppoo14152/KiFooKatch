@@ -12,26 +12,27 @@ public class Start extends Boton
      * Act - do whatever the Start wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-   World w=getWorld();
-    
+    World w=getWorld();
+    private SimpleTimer t;
     public Start(){
-       w=new Mundo(); 
-       setImage("jugarN.png");
-       super.imagen(300,100); 
+        w=new Mundo(); 
+        t=new SimpleTimer();
+        setImage("jugarN.png");
+        super.imagen(300,100); 
     }
+
     public void act() 
     {
         if(Greenfoot.mouseMoved(this))
         {
-          setImage("jugarV.png");
-          super.imagen(300,100);
-          if(Greenfoot.mouseClicked(this))
-          {
-          Greenfoot.setWorld(w);
+            t.mark();
+            setImage("jugarV.png");
+            super.imagen(300,100);
+            
         }
-        // Add your action code here.
+        else{setImage("jugarN.png");
+            super.imagen(300,100); 
+           
+        }
     }
-    else{setImage("jugarN.png");
-       super.imagen(300,100); }
-   }
 } 
