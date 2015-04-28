@@ -69,7 +69,8 @@ public abstract class KinectWorld extends World
      */
     public KinectWorld(int thumbnailWidth, int thumbnailHeight, double scale, boolean depth)
     {
-        super((int)(KinectClient.DEFAULT_IMAGE_WIDTH * scale), (int)(KinectClient.DEFAULT_IMAGE_HEIGHT * scale), 1); 
+        //super((int)(KinectClient.DEFAULT_IMAGE_WIDTH * scale), (int)(KinectClient.DEFAULT_IMAGE_HEIGHT * scale), 1); 
+        super(800, 600, 1); 
 
         this.scale = scale;
 
