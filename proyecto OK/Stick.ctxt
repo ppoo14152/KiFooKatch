@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.params=ID\ pl1\ pl2
+comment0.target=Stick(int,\ Plato,\ Plato)
+comment1.params=world
+comment1.target=void\ addedToWorld(greenfoot.World)
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n
+comment3.params=user\ p1\ p2
+comment3.target=void\ trackUser(UserData,\ Plato,\ Plato)
+comment3.text=\r\n\ Display\ a\ tracked\ user\ on\ screen\ AQUI\ \!\!\!\!\!\!\!\!\!\!\!\!\!\!\r\n
+comment4.params=
+comment4.target=void\ moveALittle()
+comment5.params=
+comment5.target=void\ animateFace()
+comment6.params=world
+comment6.target=void\ createBody(greenfoot.World)
+comment7.params=x\ y
+comment7.target=UserData\ setUpPose(float[],\ float[])
+comment7.text=\r\n\ Initialise\ the\ coordinates\ for\ the\ default\ body\ poses\ (used\ when\ we\ cannot\r\n\ see\ a\ user).\r\n
+numComments=8

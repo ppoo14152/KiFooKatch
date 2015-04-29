@@ -6,7 +6,7 @@ import greenfoot.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Mundo extends World
+public class Mundo extends KinectWorld
 {
 
     /**
@@ -22,17 +22,44 @@ public class Mundo extends World
     private Aviso aviso;
     private int band;
     private GreenfootSound sonido;
+    
+    public static final double SCALE = 4.0;
+
+    private static final int THUMBNAIL_WIDTH = 80;
+    private static final int THUMBNAIL_HEIGHT = 60;
+
+    private Stick stick;
+    private UserData[] users;
+    Plato p1;
+    Plato p2;
+    
     public Mundo()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         //super(800, 600, 1);
-        super(800,600,1);
+       super(THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT, SCALE, false);
+        
+        final int width = getWidth();
+        final int height = getHeight();
+        
         t=new SimpleTimer();
+        //addObject(new Instructions(), width/2, height/2);
+        addObject(new Thumbnail(), width - THUMBNAIL_WIDTH/2, height - THUMBNAIL_HEIGHT/2);
+        
+        users = new UserData[0];
+        p1=new Plato();
+        p2=new Plato();
+   
+        addObject(p1,400,500);
+        addObject(p2,400,500);
+        stick = new Stick(0,p1,p2);
+        addObject(stick, (int)(320*SCALE), (int)(240*SCALE));
+        
 
         aviso= new Aviso();
-        humano h= new humano();
+       // humano h= new humano();
         //creaComida();
-        addObject(h,400,500);
+        //addObject(h,400,500);
         setBackground("madera.jpg");
         
         band=0;
@@ -68,6 +95,9 @@ public class Mundo extends World
 
     public void act(){
         
+         super.act();
+        users = getAllUsers();
+        
         if(band==0){
             t.mark();
             addObject(aviso,centroPx,centroPy);
@@ -97,6 +127,16 @@ public class Mundo extends World
         creaComida();
         band=6;    
         }
+        
 
     }
+    
+    public UserData getUser(int ID)
+    {
+        if (ID >= users.length) {
+            return null;
+        }
+        return users[ID];
+    }
+    
 }
