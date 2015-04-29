@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=humano()
+comment1.params=
+comment1.target=void\ act()
+comment2.params=direccion
+comment2.target=void\ setDireccion(int)
+comment3.params=
+comment3.target=greenfoot.GreenfootImage\ imagen()
+numComments=4
