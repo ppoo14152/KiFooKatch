@@ -149,7 +149,11 @@ public class Mundo extends KinectWorld
         creaComida(vel1);
         band=6;    
         }
-         if(numObjetos==10){
+        
+        //CUANDO PIERDA O TERMINE EL JUEGO
+        /*
+         
+          if(numObjetos==10){
              if (UserInfo.isStorageAvailable()) {
          UserInfo myInfo = UserInfo.getMyInfo();
          if (puntaje > myInfo.getScore()) {
@@ -158,7 +162,7 @@ public class Mundo extends KinectWorld
          }
      }
      addObject(new ScoreBoard(800, 600), getWidth() / 2, getHeight() / 2);
-            }
+            }*/
 
     }
     public int eliminaComidaS(){
