@@ -15,13 +15,13 @@ public class Start extends Boton
     
 
     public Start(){
-        setImage("jugarV.png");
+        setImage("jugar.png");
         super.imagen(200,80); 
     }
 
     public void juega()
     {
-        setImage("jugarV.png");
+        setImage("jugar.png");
         super.imagen(200,80);
         
     }
