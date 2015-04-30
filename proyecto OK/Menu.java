@@ -18,7 +18,7 @@ public class Menu extends World
     //private Puntero p;
     GreenfootSound sonido;
     GreenfootSound sonidoB;
-    GreenfootImage titulo;
+    Titulo t;
     World wj;
     MouseInfo m;
     public Menu()
@@ -27,15 +27,16 @@ public class Menu extends World
         super(800,600,1);
         bStart=new Start();
         wj=new Mundo();
-        titulo= new GreenfootImage("kifookatch.png");
-        titulo.scale(200,100);
+        t=new Titulo();
+        
         dibujaBotones();
         sonido= new GreenfootSound("intro.mid");
         sonidoB= new GreenfootSound("click.mp3");
     }
     public void act(){
      m=Greenfoot.getMouseInfo(); 
-     //drawImage(titulo, 200,200);
+     addObject(t,400,200);
+     
      
      sonido.play();
      if(!sonido.isPlaying()){
