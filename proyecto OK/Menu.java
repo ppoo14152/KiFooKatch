@@ -39,7 +39,10 @@ public class Menu extends World
         bRecord= new Record();
         
         wj=new Mundo();
-        wc= new Creditos(this);
+
+       wc= new Creditos(this);
+       wa= new AyudaM(this);
+
         
         
         
@@ -62,7 +65,13 @@ public class Menu extends World
         sonidoB.play();
         Greenfoot.setWorld(wj); //wj = mundo juego
      }
-      if(Greenfoot.mouseClicked(bCreds)){
+      if(Greenfoot.mouseClicked(bAyuda)){
+        
+        sonido.stop();
+        sonidoB.play();
+        Greenfoot.setWorld(wa); //wa = mundo ayuda
+     }
+       if(Greenfoot.mouseClicked(bCreds)){
         
         sonido.stop();
         sonidoB.play();

@@ -6,7 +6,7 @@ import greenfoot.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Creditos extends World
+public class AyudaM extends World
 {
 
     /**
@@ -20,7 +20,7 @@ public class Creditos extends World
     MouseInfo m;
    
     
-    public Creditos(World w)
+    public AyudaM(World w)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
