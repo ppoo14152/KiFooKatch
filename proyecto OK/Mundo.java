@@ -22,7 +22,7 @@ public class Mundo extends KinectWorld
     private Aviso aviso;
     private int band;
     private GreenfootSound sonido;
-    
+
     public static final double SCALE = 4.0;
 
     private static final int THUMBNAIL_WIDTH = 80;
@@ -36,11 +36,11 @@ public class Mundo extends KinectWorld
     int valorComidaSana=10;
     int valorComidaMala=-10;
     private int numObjetos;
-
+    Suelo suelo;
     int vel1=1;
     int vel2=3;
     int vel3=5;
-    int vel4=10;
+    int vel4=20;
     int nivel=2;
     //UserInfo jugador;
 
@@ -48,33 +48,34 @@ public class Mundo extends KinectWorld
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         //super(800, 600, 1);
-       super(THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT, SCALE, false);
-        
+        super(THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT, SCALE, false);
+
         final int width = getWidth();
         final int height = getHeight();
-        
+
         //jugador= new UserInfo();
-        
+
         t=new SimpleTimer();
         //addObject(new Instructions(), width/2, height/2);
         addObject(new Thumbnail(), width - THUMBNAIL_WIDTH/2, height - THUMBNAIL_HEIGHT/2);
-        
+
         users = new UserData[0];
         p1=new Plato();
         p2=new Plato();
-   
+        suelo=new Suelo();
+        addObject(suelo,centroPx,600);
         addObject(p1,400,500);
         addObject(p2,400,500);
         stick = new Stick(0,p1,p2);
         addObject(stick, (int)(320*SCALE), (int)(240*SCALE));
-        
+
 
         aviso= new Aviso();
-       // humano h= new humano();
+        // humano h= new humano();
         //creaComida();
         //addObject(h,400,500);
         setBackground("madera.jpg");
-        
+
         band=0;
         sonido=new GreenfootSound("mundo.mid");
     }
@@ -82,7 +83,7 @@ public class Mundo extends KinectWorld
     public void creaComida(int vel){
         int i=0;
         int rand;
-       
+
         Comida varObjeto=new Comida();
         for(i=0;i<10;i++){
             rand=Greenfoot.getRandomNumber(5);
@@ -108,33 +109,33 @@ public class Mundo extends KinectWorld
 
     public void act(){
         numObjetos=numberOfObjects();
-        if(numObjetos==10){
+        if(numObjetos==11){
             if(nivel==2)
             {
                 nivel=3;              
                 creaComida(vel2);
-              
+
             }else{
-             if(nivel==3)
-             {
-                 nivel=4;
-                 creaComida(vel3);
-             }else
-               if(nivel==3)
-               {
-                   creaComida(vel4);
-               }
+                if(nivel==3)
+                {
+                    nivel=4;
+                    creaComida(vel3);
+                }else
+                if(nivel==4)
+                {
+                    creaComida(vel4);
+                }
             }  
         }
         puntaje=puntaje+eliminaComidaS();
         puntaje=puntaje+eliminaComidaM();
         System.out.println("numero objetos"+numObjetos);
         if(!sonido.isPlaying()){
-         sonido.play();
+            sonido.play();
         }
-         super.act();
+        super.act();
         users = getAllUsers();
-        
+
         if(band==0){
             t.mark();
             addObject(aviso,centroPx,centroPy);
@@ -144,44 +145,45 @@ public class Mundo extends KinectWorld
             sonido.play();
         }
         if(band==2&&t.millisElapsed()>500){
-         aviso.setImage("2.png");
+            aviso.setImage("2.png");
             aviso.setImage(aviso.imagen(200,200));
-         band=3;
+            band=3;
         }
         if(band==3&&t.millisElapsed()>1000){
-        aviso.setImage("3.png");
-        aviso.setImage(aviso.imagen(200,200));
-        band=4;
+            aviso.setImage("3.png");
+            aviso.setImage(aviso.imagen(200,200));
+            band=4;
         }
         if(band==4&&t.millisElapsed()>1500){
-        aviso.setImage("go.png");
+            aviso.setImage("go.png");
             aviso.setImage(aviso.imagen(200,200));
-        band=5;
+            band=5;
         }
         if(band==5&&t.millisElapsed()>2000)
         {
-        removeObject(aviso);
-        creaComida(vel1);
-        band=6;    
+            removeObject(aviso);
+            creaComida(vel1);
+            band=6;    
         }
-        
+
         //CUANDO PIERDA O TERMINE EL JUEGO
         /*
-         
-          if(numObjetos==10){
-             if (UserInfo.isStorageAvailable()) {
-         UserInfo myInfo = UserInfo.getMyInfo();
-         if (puntaje > myInfo.getScore()) {
-             myInfo.setScore(puntaje);
-             myInfo.store();  // write back to server
-         }
-     }
-     addObject(new ScoreBoard(800, 600), getWidth() / 2, getHeight() / 2);
-            }*/
+
+        if(numObjetos==10){
+        if (UserInfo.isStorageAvailable()) {
+        UserInfo myInfo = UserInfo.getMyInfo();
+        if (puntaje > myInfo.getScore()) {
+        myInfo.setScore(puntaje);
+        myInfo.store();  // write back to server
+        }
+        }
+        addObject(new ScoreBoard(800, 600), getWidth() / 2, getHeight() / 2);
+        }*/
 
     }
+
     public int eliminaComidaS(){
-        
+
         if(p1.isTouchComidaS()){
             p1.eliminaComida();
             return valorComidaSana;
@@ -191,21 +193,23 @@ public class Mundo extends KinectWorld
             return valorComidaSana;
         }
         return 0;
-         
+
     }
+
     public int eliminaComidaM(){
-        
+
         if(p1.isTouchComidaM()){
             p1.eliminaComida();
             return valorComidaMala;
         }
-         if(p2.isTouchComidaM()){
+        if(p2.isTouchComidaM()){
             p2.eliminaComida();
             return valorComidaMala;
         }
         return 0;
-         
+
     }
+
     public UserData getUser(int ID)
     {
         if (ID >= users.length) {
@@ -213,5 +217,5 @@ public class Mundo extends KinectWorld
         }
         return users[ID];
     }
-    
+
 }

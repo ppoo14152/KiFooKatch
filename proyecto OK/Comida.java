@@ -31,5 +31,6 @@ public class Comida extends Actor
             timer.mark();
 
         }// Add your action code here.
+        
     }    
 }

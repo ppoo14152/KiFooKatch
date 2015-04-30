@@ -13,7 +13,7 @@ public class Platano extends ComidaSana
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
    SimpleTimer timer=new SimpleTimer();
-    int velCaida;
+    
    
          
     public Platano(int vel){
