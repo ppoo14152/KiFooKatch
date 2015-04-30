@@ -145,6 +145,10 @@ public class Mundo extends KinectWorld
             p1.eliminaComida();
             return valorComidaSana;
         }
+        if(p2.isTouchComidaS()){
+            p2.eliminaComida();
+            return valorComidaSana;
+        }
         return 0;
          
     }
