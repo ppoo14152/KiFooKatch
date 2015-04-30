@@ -36,14 +36,14 @@ public class Mundo extends KinectWorld
     int valorComidaSana=10;
     int valorComidaMala=-10;
     private int numObjetos;
-<<<<<<< .mine
+
     int vel1=1;
     int vel2=3;
     int vel3=5;
     int vel4=10;
-=======
+    int nivel=2;
     //UserInfo jugador;
->>>>>>> .r44
+
     public Mundo()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -109,7 +109,22 @@ public class Mundo extends KinectWorld
     public void act(){
         numObjetos=numberOfObjects();
         if(numObjetos==10){
-        creaComida(vel4);
+            if(nivel==2)
+            {
+                nivel=3;              
+                creaComida(vel2);
+              
+            }else{
+             if(nivel==3)
+             {
+                 nivel=4;
+                 creaComida(vel3);
+             }else
+               if(nivel==3)
+               {
+                   creaComida(vel4);
+               }
+            }  
         }
         puntaje=puntaje+eliminaComidaS();
         puntaje=puntaje+eliminaComidaM();
