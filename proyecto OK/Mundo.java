@@ -36,6 +36,7 @@ public class Mundo extends KinectWorld
     int valorComidaSana=10;
     int valorComidaMala=-10;
     private int numObjetos;
+    UserInfo jugador;
     public Mundo()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -44,6 +45,8 @@ public class Mundo extends KinectWorld
         
         final int width = getWidth();
         final int height = getHeight();
+        
+       // jugador= new UserInfo();
         
         t=new SimpleTimer();
         //addObject(new Instructions(), width/2, height/2);
@@ -156,6 +159,10 @@ public class Mundo extends KinectWorld
         
         if(p1.isTouchComidaM()){
             p1.eliminaComida();
+            return valorComidaMala;
+        }
+         if(p2.isTouchComidaM()){
+            p2.eliminaComida();
             return valorComidaMala;
         }
         return 0;
