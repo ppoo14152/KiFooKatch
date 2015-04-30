@@ -41,6 +41,11 @@ public class Mundo extends KinectWorld
     int vel2=3;
     int vel3=5;
     int vel4=20;
+    
+    Nivel1 n1= new Nivel1();
+    Nivel2 n2= new Nivel2();
+    Nivel3 n3= new Nivel3();
+    Nivel4 n4= new Nivel4();
 
 
     //UserInfo jugador
@@ -76,10 +81,13 @@ public class Mundo extends KinectWorld
 
 
         aviso= new Aviso();
+        
+        
         // humano h= new humano();
         //creaComida();
         //addObject(h,400,500);
         setBackground("madera.jpg");
+        
 
         band=0;
         sonido=new GreenfootSound("mundo.mid");
@@ -114,22 +122,32 @@ public class Mundo extends KinectWorld
 
     public void act(){
         numObjetos=numberOfObjects();
-        if(numObjetos==11){
+        if(numObjetos>12&&nivel==2){
+            addObject(n1, 400,150);
+        }
+        if(numObjetos==12){
             if(nivel==2)
             {
-                nivel=3;              
+                removeObject(n1);
+                nivel=3; 
+                addObject(n2, 400,150);
                 creaComida(vel2);
 
             }else{
 
              if(nivel==3)
              {
+                 removeObject(n2);
                  nivel=4;
+                 addObject(n3,400,150);
                  creaComida(vel3);
              }else
                if(nivel==4)
                {
+                   removeObject(n3);
+                   addObject(n4,400,150);
                    creaComida(vel4);
+                   
                }
 
                 if(nivel==3)
