@@ -25,7 +25,7 @@ public class Plato extends Actor
     }
     public boolean isTouchComidaM(){
     
-            return isTouching(ComidaSana.class);
+            return isTouching(ComidaMala.class);
         
     }
     public void eliminaComida(){
