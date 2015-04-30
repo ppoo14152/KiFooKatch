@@ -17,6 +17,7 @@ public class Menu extends World
     Start bStart;
     //private Puntero p;
     GreenfootSound sonido;
+    GreenfootSound sonidoB;
     World wj;
     MouseInfo m;
     public Menu()
@@ -27,14 +28,19 @@ public class Menu extends World
         wj=new Mundo();
         dibujaBotones();
         sonido= new GreenfootSound("intro.mid");
+        sonidoB= new GreenfootSound("click.mp3");
     }
     public void act(){
      m=Greenfoot.getMouseInfo(); 
      
      sonido.play();
+     if(!sonido.isPlaying()){
+        sonido.play();
+        }
      if(Greenfoot.mouseClicked(bStart)){
         bStart.juega();
         sonido.stop();
+        sonidoB.play();
         Greenfoot.setWorld(wj); //wj = mundo juego
      }
      

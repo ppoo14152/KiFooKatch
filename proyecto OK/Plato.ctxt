@@ -1,8 +1,13 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Plato()
+comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ Plato\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment1.params=
-comment1.target=void\ act()
+comment1.target=boolean\ isTouchComidaS()
 comment2.params=
-comment2.target=greenfoot.GreenfootImage\ imagen()
-numComments=3
+comment2.target=boolean\ isTouchComidaM()
+comment3.params=
+comment3.target=void\ eliminaComida()
+comment4.params=
+comment4.target=greenfoot.GreenfootImage\ imagen()
+numComments=5

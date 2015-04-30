@@ -32,7 +32,10 @@ public class Mundo extends KinectWorld
     private UserData[] users;
     Plato p1;
     Plato p2;
-    
+    int puntaje=0;
+    int valorComidaSana=10;
+    int valorComidaMala=-10;
+    private int numObjetos;
     public Mundo()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -94,7 +97,13 @@ public class Mundo extends KinectWorld
     }
 
     public void act(){
-        
+        numObjetos=numberOfObjects();
+        puntaje=puntaje+eliminaComidaS();
+        puntaje=puntaje+eliminaComidaM();
+        System.out.println("numero objetos"+numObjetos);
+        if(!sonido.isPlaying()){
+         sonido.play();
+        }
          super.act();
         users = getAllUsers();
         
@@ -130,7 +139,24 @@ public class Mundo extends KinectWorld
         
 
     }
-    
+    public int eliminaComidaS(){
+        
+        if(p1.isTouchComidaS()){
+            p1.eliminaComida();
+            return valorComidaSana;
+        }
+        return 0;
+         
+    }
+    public int eliminaComidaM(){
+        
+        if(p1.isTouchComidaM()){
+            p1.eliminaComida();
+            return valorComidaMala;
+        }
+        return 0;
+         
+    }
     public UserData getUser(int ID)
     {
         if (ID >= users.length) {

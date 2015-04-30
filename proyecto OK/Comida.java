@@ -25,7 +25,7 @@ public class Comida extends Actor
     {
         if(timer.millisElapsed()>velCaida){
 
-            this.setLocation(getX(),getY()+1);
+            this.setLocation(getX(),getY()+5);
             timer.mark();
 
         }// Add your action code here.

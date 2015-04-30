@@ -187,8 +187,7 @@ public class Stick  extends Actor
                // if(y<=(H)){
                 y=H;
                 //}
-                System.out.println("HEAD"+i+"\n");
-        System.out.println(y);
+                
                 
             }
             else{
@@ -214,8 +213,7 @@ public class Stick  extends Actor
                         y=S;
                     
                     //}  
-                    // System.out.println("leftshould"+i+"\n");
-        //System.out.println(x);
+                  
                 }
                 else{
                     if(i==RIGHT_SHOULDER){
@@ -241,8 +239,7 @@ public class Stick  extends Actor
                             }
                                 
                             }
-                             System.out.println("leftelbow"+i+"\n");
-        System.out.println(y);
+                             
                         }
                         else{
                             if(i==RIGHT_ELBOW){
