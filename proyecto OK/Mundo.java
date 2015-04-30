@@ -41,8 +41,13 @@ public class Mundo extends KinectWorld
     int vel2=3;
     int vel3=5;
     int vel4=20;
+
+
+    //UserInfo jugador
+
     int nivel=2;
     //UserInfo jugador;
+
 
     public Mundo()
     {    
@@ -116,6 +121,17 @@ public class Mundo extends KinectWorld
                 creaComida(vel2);
 
             }else{
+<<<<<<< .mine
+             if(nivel==3)
+             {
+                 nivel=4;
+                 creaComida(vel3);
+             }else
+               if(nivel==4)
+               {
+                   creaComida(vel4);
+               }
+=======
                 if(nivel==3)
                 {
                     nivel=4;
@@ -125,6 +141,7 @@ public class Mundo extends KinectWorld
                 {
                     creaComida(vel4);
                 }
+>>>>>>> .r48
             }  
         }
         puntaje=puntaje+eliminaComidaS();
@@ -167,7 +184,21 @@ public class Mundo extends KinectWorld
         }
 
         //CUANDO PIERDA O TERMINE EL JUEGO
-        /*
+        
+<<<<<<< .mine
+         
+          if(puntaje<=(-100)){
+             if (UserInfo.isStorageAvailable()) {
+         UserInfo myInfo = UserInfo.getMyInfo();
+         if (puntaje > myInfo.getScore()) {
+             myInfo.setScore(puntaje);
+             myInfo.store();  // write back to server
+         }
+     }
+     addObject(new ScoreBoard(800, 600), getWidth() / 2, getHeight() / 2);
+            }
+=======
+>>>>>>> .r48
 
         if(numObjetos==10){
         if (UserInfo.isStorageAvailable()) {
