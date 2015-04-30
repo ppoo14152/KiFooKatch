@@ -13,9 +13,9 @@ public class Naranja extends ComidaSana
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    public Naranja(){
+    public Naranja(int vel){
       setImage(imagen());
-      
+      velCaida=vel;
     }
     public void act() 
     {

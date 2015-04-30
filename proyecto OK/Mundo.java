@@ -36,7 +36,14 @@ public class Mundo extends KinectWorld
     int valorComidaSana=10;
     int valorComidaMala=-10;
     private int numObjetos;
+<<<<<<< .mine
+    int vel1=1;
+    int vel2=3;
+    int vel3=5;
+    int vel4=10;
+=======
     //UserInfo jugador;
+>>>>>>> .r44
     public Mundo()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -72,7 +79,7 @@ public class Mundo extends KinectWorld
         sonido=new GreenfootSound("mundo.mid");
     }
 
-    public void creaComida(){
+    public void creaComida(int vel){
         int i=0;
         int rand;
        
@@ -80,17 +87,17 @@ public class Mundo extends KinectWorld
         for(i=0;i<10;i++){
             rand=Greenfoot.getRandomNumber(5);
             switch(rand){
-                case 1:varObjeto=new Hamburguesa();
-                addObject(varObjeto,(Greenfoot.getRandomNumber(8)*100),30);
+                case 1:varObjeto=new Hamburguesa(vel);
+                addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
                 break;
-                case 2:varObjeto=new Naranja();
-                addObject(varObjeto,(Greenfoot.getRandomNumber(8)*100),30); 
+                case 2:varObjeto=new Naranja(vel);
+                addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30); 
                 break;
-                case 3:varObjeto= new Cheetos();
-                addObject(varObjeto,(Greenfoot.getRandomNumber(8)*100),30);
+                case 3:varObjeto= new Cheetos(vel);
+                addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
                 break;
-                case 4:varObjeto= new Platano();
-                addObject(varObjeto,(Greenfoot.getRandomNumber(8)*100),30);
+                case 4:varObjeto= new Platano(vel);
+                addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
                 break; 
 
             }
@@ -101,6 +108,9 @@ public class Mundo extends KinectWorld
 
     public void act(){
         numObjetos=numberOfObjects();
+        if(numObjetos==10){
+        creaComida(vel4);
+        }
         puntaje=puntaje+eliminaComidaS();
         puntaje=puntaje+eliminaComidaM();
         System.out.println("numero objetos"+numObjetos);
@@ -136,7 +146,7 @@ public class Mundo extends KinectWorld
         if(band==5&&t.millisElapsed()>2000)
         {
         removeObject(aviso);
-        creaComida();
+        creaComida(vel1);
         band=6;    
         }
          if(numObjetos==10){

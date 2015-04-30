@@ -16,9 +16,9 @@ public class Hamburguesa extends ComidaMala
  
    
          
-    public Hamburguesa(){
+    public Hamburguesa(int vel){
       setImage(imagen());
-      
+      velCaida=vel;
     } 
     public void act(){
      super.cae();

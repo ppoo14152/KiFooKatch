@@ -13,9 +13,9 @@ public class Cheetos extends ComidaMala
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
   
-     public Cheetos(){
+     public Cheetos(int vel){
       setImage(imagen());
-      
+      velCaida=vel;
     } 
     public void act(){
      super.cae();

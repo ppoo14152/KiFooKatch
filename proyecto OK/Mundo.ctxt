@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Mundo()
-comment1.params=
-comment1.target=void\ creaComida()
+comment1.params=vel
+comment1.target=void\ creaComida(int)
 comment2.params=
 comment2.target=void\ act()
 comment3.params=

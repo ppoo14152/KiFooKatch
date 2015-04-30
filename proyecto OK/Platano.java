@@ -16,8 +16,9 @@ public class Platano extends ComidaSana
     int velCaida;
    
          
-    public Platano(){
+    public Platano(int vel){
       setImage(imagen());
+      velCaida=vel;
     } 
     public void act(){
      super.cae();
