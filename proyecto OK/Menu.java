@@ -39,7 +39,7 @@ public class Menu extends World
         bRecord= new Record();
         
         wj=new Mundo();
-        wc= new Creditos();
+        wc= new Creditos(this);
         
         
         

@@ -20,13 +20,14 @@ public class Creditos extends World
     MouseInfo m;
    
     
-    public Creditos()
+    public Creditos(World w)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
         
         bSalir = new Salir();
-        wm= new Menu();
+        wm=w;
+
         sonido= new GreenfootSound("intro.mid");
         sonidoB= new GreenfootSound("click.mp3");
     }
