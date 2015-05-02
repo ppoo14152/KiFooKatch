@@ -205,7 +205,7 @@ public class Mundo extends KinectWorld
         
 
          
-          if(puntaje<=(-100)){
+          if(puntaje<=(-50)){
              if (UserInfo.isStorageAvailable()) {
          UserInfo myInfo = UserInfo.getMyInfo();
          if (puntaje > myInfo.getScore()) {

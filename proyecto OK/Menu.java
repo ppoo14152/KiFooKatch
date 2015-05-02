@@ -42,6 +42,7 @@ public class Menu extends World
 
        wc= new Creditos(this);
        wa= new AyudaM(this);
+       wr= new RecordM(this);
 
         
         
@@ -76,6 +77,12 @@ public class Menu extends World
         sonido.stop();
         sonidoB.play();
         Greenfoot.setWorld(wc); //wc = mundo creditos
+     }
+      if(Greenfoot.mouseClicked(bRecord)){
+        
+        sonido.stop();
+        sonidoB.play();
+        Greenfoot.setWorld(wr); //wr = mundo record
      }
      
     }
