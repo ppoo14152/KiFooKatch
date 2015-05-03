@@ -28,10 +28,28 @@ public class Menu extends World
     World wa;
     World wr;
     MouseInfo m;
+    
+    
+    //public static final double SCALE = 1.25;
+    //private static final int THUMBNAIL_WIDTH = 80;
+    
+    //private static final int THUMBNAIL_HEIGHT = 60;
+     //private Stick stick;
+    //private UserData[] users;
+    
+
     public Menu()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800,600,1);
+       
+       //super(THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT, SCALE, false);
+
+        //final int width = getWidth();
+        //final int height = getHeight();
+        
+        //addObject(new Thumbnail(), width - THUMBNAIL_WIDTH/2, height - THUMBNAIL_HEIGHT/2);
+       
         t=new Titulo();
         bStart=new Start();
         bAyuda= new Ayuda();

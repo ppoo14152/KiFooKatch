@@ -30,6 +30,7 @@ public class Mundo extends KinectWorld
 
     private Stick stick;
     private UserData[] users;
+    
     Plato p1;
     Plato p2;
     int puntaje=0;
@@ -37,10 +38,10 @@ public class Mundo extends KinectWorld
     int valorComidaMala=-10;
     private int numObjetos;
     Suelo suelo;
-    int vel1=1;
-    int vel2=3;
-    int vel3=5;
-    int vel4=20;
+    int vel4=1;
+    int vel3=3;
+    int vel2=5;
+    int vel1=20;
     
     Nivel1 n1= new Nivel1();
     Nivel2 n2= new Nivel2();
@@ -69,7 +70,8 @@ public class Mundo extends KinectWorld
         //addObject(new Instructions(), width/2, height/2);
         addObject(new Thumbnail(), width - THUMBNAIL_WIDTH/2, height - THUMBNAIL_HEIGHT/2);
 
-        users = new UserData[0];
+        //users = new UserData[0];
+        
         p1=new Plato();
         p2=new Plato();
         suelo=new Suelo();
@@ -121,6 +123,17 @@ public class Mundo extends KinectWorld
     }
 
     public void act(){
+        
+        super.act();
+        if(!isConnected()){
+            return;
+        }
+        
+        users = getTrackedUsers();
+        if(users.length==0){
+            return;
+        }
+        
         numObjetos=numberOfObjects();
         if(numObjetos>12&&nivel==2){
             addObject(n1, 400,150);
@@ -168,8 +181,7 @@ public class Mundo extends KinectWorld
         if(!sonido.isPlaying()){
             sonido.play();
         }
-        super.act();
-        users = getAllUsers();
+        
 
         if(band==0){
             t.mark();
@@ -194,6 +206,7 @@ public class Mundo extends KinectWorld
             aviso.setImage(aviso.imagen(200,200));
             band=5;
         }
+        
         if(band==5&&t.millisElapsed()>2000)
         {
             removeObject(aviso);

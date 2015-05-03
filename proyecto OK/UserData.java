@@ -21,11 +21,11 @@ public class UserData
         this.img.scale((int)(scale * this.img.getWidth()), (int)(scale * this.img.getHeight()));
         this.imgX = (int)(ud.imgX * scale);
         this.imgY = (int)(ud.imgY * scale);
-        
+        if(this.state==2){
         for (int i = 0; i < Joint.NUM_JOINTS; i++)
         {
             joints[i] = ud.joints[i].scaledCopy(scale);
-        }
+        }}
     }
     
     /**
@@ -50,7 +50,7 @@ public class UserData
      * For internal use only.
      */
     public void setJoint(int j, Joint joint)
-    {
+    {   
         joints[j] = joint;
     }
 
