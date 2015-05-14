@@ -279,5 +279,9 @@ public class Mundo extends KinectWorld
         }
         return users[ID];
     }
+    
+    public void stopped(){
+    sonido.pause();
+    }
 
 }

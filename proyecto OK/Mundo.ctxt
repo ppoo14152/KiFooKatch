@@ -11,4 +11,6 @@ comment4.params=
 comment4.target=int\ eliminaComidaM()
 comment5.params=ID
 comment5.target=UserData\ getUser(int)
-numComments=6
+comment6.params=
+comment6.target=void\ stopped()
+numComments=7

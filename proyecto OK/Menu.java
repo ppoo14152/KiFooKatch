@@ -111,4 +111,8 @@ public class Menu extends World
        addObject(bRecord,600,450);
     }
     
+    public void stopped(){
+    sonido.pause();
+    }
+    
 }
