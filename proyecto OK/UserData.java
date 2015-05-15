@@ -17,6 +17,7 @@ public class UserData
         this.id = ud.id;
         this.state = ud.state;
         this.previousState = ud.state;
+        if(ud.img!=null)
         this.img = new GreenfootImage(ud.img);
         this.img.scale((int)(scale * this.img.getWidth()), (int)(scale * this.img.getHeight()));
         this.imgX = (int)(ud.imgX * scale);

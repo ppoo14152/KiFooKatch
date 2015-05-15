@@ -133,16 +133,21 @@ public abstract class KinectWorld extends World
      */
     public UserData[] getTrackedUsers()
     {
+        int tam=0;
         ArrayList<UserData> trackedUsers = new ArrayList<UserData>();
         for (UserData u : getAllUsers())
         {
             if (u.isTracking())
             {
                 trackedUsers.add(u);
+                tam+=1;
             }
+            
         }
+        //tam=trackedUsers.length;
         // No need to scale, as getAllUsers will have already scaled:
-        return trackedUsers.toArray(new UserData[0]);
+        return trackedUsers.toArray(new UserData[tam]);
+        
     }
     
     /**
