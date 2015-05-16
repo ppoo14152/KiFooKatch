@@ -164,8 +164,8 @@ public abstract class KinectWorld extends World
         {
             if (u.isTracking())
                 return u;
-        }
-        
+          
+        }    
         return null;
     }
     

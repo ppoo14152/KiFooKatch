@@ -127,7 +127,9 @@ public class Stick  extends Actor
      */
     public void act() 
     {
+        
         UserData user = ((Mundo)getWorld()).getUser(ID);
+        
 
         if (user == null) {
             // no user visible
