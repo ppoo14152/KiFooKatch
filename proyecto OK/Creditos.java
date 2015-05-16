@@ -13,11 +13,12 @@ public class Creditos extends World
      * Constructor for objects of class Creditos.
      * 
      */
-    Salir bSalir;
-    GreenfootSound sonido;
-    GreenfootSound sonidoB;
-    World wm;
-    MouseInfo m;
+    private Salir bSalir;
+    private GreenfootSound sonido;
+    private GreenfootSound sonidoB;
+    private World wm;
+    private MouseInfo m;
+    private TCred text;
    
     
     public Creditos(World w)
@@ -26,10 +27,11 @@ public class Creditos extends World
         super(800, 600, 1); 
         
         bSalir = new Salir();
+        text= new TCred();
 
         wm= w;
-
-
+        
+        dibujaEntorno();
         sonido= new GreenfootSound("intro.mid");
         sonidoB= new GreenfootSound("click.mp3");
         
@@ -37,9 +39,9 @@ public class Creditos extends World
     
     public void act(){
      m=Greenfoot.getMouseInfo(); 
-     //addObject(t,400,200);
      
-     dibujaBotones();
+     
+     
      sonido.play();
      if(!sonido.isPlaying()){
         sonido.play();
@@ -53,8 +55,9 @@ public class Creditos extends World
    
      
     }
-    public void dibujaBotones(){
-       addObject(bSalir,600,500);
+    public void dibujaEntorno(){
+       addObject(bSalir,700,550);
+       addObject(text,450,275);
       
     }
     

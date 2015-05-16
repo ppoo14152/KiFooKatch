@@ -11,6 +11,8 @@ public class TAyuda extends Texto
 
     public TAyuda(){
         setImage("instrucciones.png");
+        GreenfootImage i=getImage();
+        i.scale(600,500);
     
     }
     

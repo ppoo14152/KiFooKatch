@@ -13,11 +13,12 @@ public class AyudaM extends World
      * Constructor for objects of class Creditos.
      * 
      */
-    Salir bSalir;
-    GreenfootSound sonido;
-    GreenfootSound sonidoB;
-    World wm;
-    MouseInfo m;
+    private Salir bSalir;
+    private GreenfootSound sonido;
+    private GreenfootSound sonidoB;
+    private World wm;
+    private MouseInfo m;
+    private TAyuda text;
    
     
     public AyudaM(World w)
@@ -26,20 +27,20 @@ public class AyudaM extends World
         super(800, 600, 1); 
         
         bSalir = new Salir();
+        text= new TAyuda();
 
         wm= w;
 
 
         sonido= new GreenfootSound("intro.mid");
         sonidoB= new GreenfootSound("click.mp3");
+        dibujaEntorno();
         
     }
     
     public void act(){
      m=Greenfoot.getMouseInfo(); 
-     //addObject(t,400,200);
-     
-     dibujaBotones();
+   
      sonido.play();
      if(!sonido.isPlaying()){
         sonido.play();
@@ -53,8 +54,9 @@ public class AyudaM extends World
    
      
     }
-    public void dibujaBotones(){
-       addObject(bSalir,600,500);
+    public void dibujaEntorno(){
+       addObject(bSalir,700,550);
+       addObject(text,350,250);
       
     }
     

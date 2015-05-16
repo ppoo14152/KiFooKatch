@@ -31,37 +31,53 @@ public class Mundo extends KinectWorld
     private Stick stick;
     private UserData[] users;
 
-    Plato p1;
-    Plato p2;
-    int puntaje=0;
-    int valorComidaSana=10;
-    int valorComidaMala=-10;
+    private Plato p1;
+    private Plato p2;
+    private int puntaje;
+    private int valorComidaSana;
+    private int valorComidaMala;
     private int numObjetos;
-    Suelo suelo;
-    int vel4=1;
-    int vel3=3;
-    int vel2=5;
-    int vel1=20;
+    private Suelo suelo;
+    private int vel4;
+    private int vel3;
+    private int vel2;
+    private int vel1;
+    private TError errorNE;
 
-    Nivel1 n1= new Nivel1();
-    Nivel2 n2= new Nivel2();
-    Nivel3 n3= new Nivel3();
-    Nivel4 n4= new Nivel4();
+    private Nivel1 n1;
+    private Nivel2 n2;
+    private Nivel3 n3;
+    private Nivel4 n4;
 
-    //UserInfo jugador
-    int nivel=2;
-    //UserInfo jugador;
+    
+    private int nivel;
+    
     SimpleTimer timer;
     public Mundo()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         //super(800, 600, 1);
         super(THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT, SCALE, false);
+        
+        errorNE= new TError();
+        puntaje=0;
+        valorComidaSana=10;
+        valorComidaMala=-20;
+        vel4=1;
+        vel3=3;
+        vel2=5;
+        vel1=20;
+        nivel=2;
+        
+        n1=new Nivel1();
+        n2=new Nivel2();
+        n3=new Nivel3();
+        n4=new Nivel4();
 
         final int width = getWidth();
         final int height = getHeight();
 
-        //jugador= new UserInfo();
+        
 
         t=new SimpleTimer();
         //addObject(new Instructions(), width/2, height/2);
@@ -129,6 +145,8 @@ public class Mundo extends KinectWorld
 
         super.act();
         if(!isConnected()){
+            
+            errorNoConectado();            
             return;
         }
 
@@ -281,6 +299,10 @@ public class Mundo extends KinectWorld
 
     public void stopped(){
         sonido.pause();
+    }
+    
+    public void errorNoConectado(){
+    addObject(errorNE, 400,300);
     }
 
 }

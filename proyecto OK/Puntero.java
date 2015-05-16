@@ -8,14 +8,11 @@ import greenfoot.*;
  */
 public class Puntero extends Actor
 {
-    /**
-     * Act - do whatever the puntero wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    
     private int x; 
-    int y;
-   World w;
-    MouseInfo m;
+    private int y;
+    private World w;
+    private MouseInfo m;
     
     public Puntero(){
      w=new Mundo();

@@ -13,4 +13,6 @@ comment5.params=ID
 comment5.target=UserData\ getUser(int)
 comment6.params=
 comment6.target=void\ stopped()
-numComments=7
+comment7.params=
+comment7.target=void\ errorNoConectado()
+numComments=8

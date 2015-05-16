@@ -9,7 +9,10 @@ import greenfoot.*;
 public class TCred extends Texto
 {
      
-    public TCred(){
+   public TCred(){
         setImage("creditt.png");
+        GreenfootImage i=getImage();
+        i.scale(650,500);
+    
     }
 }

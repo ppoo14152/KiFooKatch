@@ -8,16 +8,12 @@ import greenfoot.*;
  */
 public class Nivel2 extends Actor
 {
-    /**
-     * Act - do whatever the Nivel2 wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-       public void act() 
-    {
-        // Add your action code here.
-        
+   
+    public Nivel2(){
         setImage(imagen(300, 75));
-    }   
+    
+    }
+    
      public GreenfootImage imagen(int x, int y){
       GreenfootImage i=getImage();
       i.scale(x,y);

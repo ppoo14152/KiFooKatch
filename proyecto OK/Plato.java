@@ -8,14 +8,9 @@ import greenfoot.*;
  */
 public class Plato extends Actor
 {
-    /**
-     * Act - do whatever the Plato wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-
     public Plato() 
     {
-        setImage(imagen());// Add your action code here.
+        setImage(imagen());
     } 
 
     public boolean isTouchComidaS(){

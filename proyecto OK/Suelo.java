@@ -8,10 +8,6 @@ import greenfoot.*;
  */
 public class Suelo extends Actor
 {
-    /**
-     * Act - do whatever the Suelo wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public Suelo() 
     {
         setImage(imagen(800,30));// Add your action code here.

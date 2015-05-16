@@ -13,11 +13,11 @@ public class RecordM extends World
      * Constructor for objects of class Creditos.
      * 
      */
-    Salir bSalir;
-    GreenfootSound sonido;
-    GreenfootSound sonidoB;
-    World wm;
-    MouseInfo m;
+    private Salir bSalir;
+    private GreenfootSound sonido;
+    private GreenfootSound sonidoB;
+    private World wm;
+    private MouseInfo m;
    
     
     public RecordM(World w)
@@ -32,20 +32,18 @@ public class RecordM extends World
 
         sonido= new GreenfootSound("intro.mid");
         sonidoB= new GreenfootSound("click.mp3");
+        dibujaEntorno();
+        
+     
         
     }
     
     public void act(){
      m=Greenfoot.getMouseInfo(); 
-     //addObject(t,400,200);
+ 
      sonido.play();
      
-       
-     
-     addObject(new ScoreBoard(600, 400), getWidth() / 2, getHeight() / 2);
-     
-    dibujaBotones();
-     
+      
      if(!sonido.isPlaying()){
         sonido.play();
         }
@@ -59,8 +57,9 @@ public class RecordM extends World
    
      
     }
-    public void dibujaBotones(){
+    public void dibujaEntorno(){
        addObject(bSalir,700,550);
+       addObject(new ScoreBoard(600, 400), getWidth() / 2, getHeight() / 2);
       
     }
     

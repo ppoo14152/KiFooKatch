@@ -17,8 +17,7 @@ public class Comida extends Actor
     public Comida(){
         timer=new SimpleTimer();
         timer.mark();
-        //
-        //velCaida=Greenfoot.getRandomNumber(10)*5;
+        
 
     }
 
@@ -30,7 +29,7 @@ public class Comida extends Actor
             this.setLocation(getX(),getY()+5);
             timer.mark();
 
-        }// Add your action code here.
+        }
         
     }    
 }

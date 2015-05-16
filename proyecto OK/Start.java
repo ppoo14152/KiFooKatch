@@ -8,12 +8,6 @@ import greenfoot.*;
  */
 public class Start extends Boton
 {
-    /**
-     * Act - do whatever the Start wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    
-
     public Start(){
         setImage("jugar.png");
         super.imagen(200,80); 

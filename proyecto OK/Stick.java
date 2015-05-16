@@ -102,8 +102,8 @@ public class Stick  extends Actor
     private UserData calibratePose;
     private GreenfootImage[] heads;
    
-    Plato p1;
-    Plato p2;
+    private Plato p1;
+    private Plato p2;
     public Stick(int ID,Plato pl1, Plato pl2)
     {
         this.ID = ID;
@@ -343,13 +343,9 @@ public class Stick  extends Actor
             heads[i] = new GreenfootImage("head"+".png");
         }
         
-        // Create body part between softPoints
-        //SoftPoint hip = dot[9].mid(dot[12]);
+        
         body = new BodyPart[10];
-       // int x1=dot[10].getX()-20;
-        //int x2=dot[13].getX()+20;
-        //dot[14].setXOffset(x1);
-        //dot[15].setXOffset(x2);
+       
        
        
         body[1] = new BodyPart("cuerpo.png",dot[1], dot[2]);                  // body centre
@@ -357,21 +353,8 @@ public class Stick  extends Actor
         body[3] = new BodyPart("rightarm.png",dot[6], dot[7]);                  // right arm
         body[4] = new BodyPart("lefthand.png", dot[5], dot[4]);
         body[5] = new BodyPart("righthand.png", dot[8], dot[7]);
-        //body[6] = new BodyPart("leftleg.png",dot[2], dot[10]);                     // left leg
-       // body[7] = new BodyPart("rightleg.png",dot[2], dot[13]);                     // right leg
-        //body[8] = new BodyPart("left-foot.png", dot[10], dot[11]);
-        //body[9] = new BodyPart("right-foot.png", dot[13], dot[14]);
-         body[0] = new BodyPart("head0.png", dot[0], dot[1], 0, 0);    // head
-        /*  body[0].dontStretch();
-          body[1].dontStretch();
-          body[2].dontStretch();
-          body[3].dontStretch();
-          body[4].dontStretch();
-          body[5].dontStretch();
-         // body[1].dontStretch();
-          // body[6].dontStretch();
-            //body[7].dontStretch();*/
-          
+        body[0] = new BodyPart("head0.png", dot[0], dot[1], 0, 0);    // head
+                 
 
         for (int i = 0; i < body.length-4; i++) {
             world.addObject(body[i], world.getWidth()/2, world.getHeight()/2);

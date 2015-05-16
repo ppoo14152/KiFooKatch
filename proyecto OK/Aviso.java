@@ -8,11 +8,8 @@ import greenfoot.*;
  */
 public class Aviso extends Actor
 {
-    /**
-     * Act - do whatever the Aviso wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
+    
+    public Aviso() 
     {
         setImage(imagen(200,200));
         
