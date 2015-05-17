@@ -18,10 +18,10 @@ public class UserData
         this.state = ud.state;
         this.previousState = ud.state;
         if(ud.img!=null)
-        this.img = new GreenfootImage(ud.img);
+        {this.img = new GreenfootImage(ud.img);
         this.img.scale((int)(scale * this.img.getWidth()), (int)(scale * this.img.getHeight()));
         this.imgX = (int)(ud.imgX * scale);
-        this.imgY = (int)(ud.imgY * scale);
+        this.imgY = (int)(ud.imgY * scale);}
         if(this.state==2){
         for (int i = 0; i < Joint.NUM_JOINTS; i++)
         {

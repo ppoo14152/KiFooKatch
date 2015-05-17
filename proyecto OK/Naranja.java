@@ -8,10 +8,6 @@ import greenfoot.*;
  */
 public class Naranja extends ComidaSana
 {
-    /**
-     * Act - do whatever the Naranja wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     
     public Naranja(int vel){
       setImage(imagen());

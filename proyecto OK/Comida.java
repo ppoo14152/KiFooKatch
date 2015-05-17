@@ -3,8 +3,8 @@ import greenfoot.*;
 /**
  * Write a description of class Comida here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Hugo Limón, Valeria Cortez 
+ * @version 1.0
  */
 public class Comida extends Actor
 {
@@ -31,5 +31,10 @@ public class Comida extends Actor
 
         }
         
-    }    
+    }   
+    
+    public boolean tocaComida(){
+        return(this.isTouching(Comida.class));
+    
+    }
 }

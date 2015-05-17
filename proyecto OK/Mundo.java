@@ -62,7 +62,7 @@ public class Mundo extends KinectWorld
         errorNE= new TError();
         puntaje=0;
         valorComidaSana=10;
-        valorComidaMala=-20;
+        valorComidaMala=-10;
         vel4=1;
         vel3=3;
         vel2=5;
@@ -119,22 +119,39 @@ public class Mundo extends KinectWorld
                 {
                     case 1:varObjeto=new Hamburguesa(vel);
                     addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                    if(varObjeto.tocaComida()){
+                    removeObject(varObjeto);
+                
+                   }
                     aux++;
                     break;
                     case 2:varObjeto=new Naranja(vel);
                     addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30); 
+                    if(varObjeto.tocaComida()){
+                    removeObject(varObjeto);
+                
+                   }
                     aux++;
                     break;
                     case 3:varObjeto= new Cheetos(vel);
                     addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                    if(varObjeto.tocaComida()){
+                    removeObject(varObjeto);
+                
+                   }
                     aux++;
                     break;
                     case 4:varObjeto= new Platano(vel);
                     addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                    if(varObjeto.tocaComida()){
+                    removeObject(varObjeto);
+                
+                   }
                     aux++;
                     break; 
 
                 }
+                
                 timer.mark();
             }
         }
