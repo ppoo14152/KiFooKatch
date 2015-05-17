@@ -10,9 +10,12 @@ public class Comida extends Actor
 {
     /**
      * Act - do whatever the Comida wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * 
      */
     private SimpleTimer timer;
+    /**
+     * this varible is used to set velocity of food's fall
+     */
     public int velCaida;
     public Comida(){
         timer=new SimpleTimer();
@@ -20,7 +23,9 @@ public class Comida extends Actor
         
 
     }
-
+    /**
+     * this method is make the food fall from the sky
+     */
     public void cae() 
     {
         if(timer.millisElapsed()>(Greenfoot.getRandomNumber(10))*velCaida)
@@ -32,7 +37,9 @@ public class Comida extends Actor
         }
         
     }   
-    
+    /**
+     * this method is for check the object which touch the food
+     */
     public boolean tocaComida(){
         return(this.isTouching(Comida.class));
     
