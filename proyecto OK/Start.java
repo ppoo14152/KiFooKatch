@@ -1,10 +1,10 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Start here.
+ * This class is used for button that leads to the "Game" section
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Hugo Limón, Valeria Cortez 
+ * @version 17/05/2015
  */
 public class Start extends Boton
 {
@@ -12,7 +12,10 @@ public class Start extends Boton
         setImage("jugar.png");
         super.imagen(200,80); 
     }
-
+    
+    /**
+     * This method is called whenever the button is pressed, to change the appareance of the button
+     */
     public void juega()
     {
         setImage("jugar.png");

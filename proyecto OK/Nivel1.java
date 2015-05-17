@@ -1,10 +1,10 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Nivel1 here.
+ * This class is used to create the signal of the level 1 in the game
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Hugo Limón, Valeria Cortez 
+ * @version 17/05/2015
  */
 public class Nivel1 extends Actor
 {
@@ -12,6 +12,14 @@ public class Nivel1 extends Actor
         setImage(imagen(300,75));
     
     } 
+    
+    
+    /**
+     * This method is used to return an scaled image for the given object
+     * @param x is the size in x axis
+     * @param y is the size in the y axis
+     * @return The scaled image for the object to use
+     */
      public GreenfootImage imagen(int x, int y){
       GreenfootImage i=getImage();
       i.scale(x,y);

@@ -1,22 +1,29 @@
 import greenfoot.*;
 
 /**
- * Write a description of class boton here.
+ * Class for all the butons used in tthe menu
  * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+ * @author Hugo Limón, Valeria Cortez 
+ * @version 17/05/2015
+*/
 public class Boton extends Actor
 {
     
     public Boton() 
     {
-        setImage(getImage());// Add your action code here.
+        setImage(getImage());
     }
+    
+    /**
+     * This method is used to return an scaled image for the given object
+     * @param x is the size in x axis
+     * @param y is the size in the y axis
+     * @return The scaled image for the object to use
+     */    
     public GreenfootImage imagen(int x, int y){
-      GreenfootImage i=getImage();
-      i.scale(x,y);
-      return i;
+       GreenfootImage i=getImage();
+       i.scale(x,y);
+       return i;
     
     }
 }

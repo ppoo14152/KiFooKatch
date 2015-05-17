@@ -3,4 +3,5 @@ comment0.params=
 comment0.target=Start()
 comment1.params=
 comment1.target=void\ juega()
+comment1.text=\r\n\ This\ method\ is\ called\ whenever\ the\ button\ is\ pressed,\ to\ change\ the\ appareance\ of\ the\ button\r\n
 numComments=2

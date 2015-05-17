@@ -1,10 +1,10 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Ayuda here.
+ * This class is used for button that leads to the "Help" section
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Hugo Limón, Valeria Cortez 
+ * @version 17/05/2015
  */
 public class Ayuda extends Boton
 {

@@ -2,7 +2,7 @@ import greenfoot.*;
 
 /**
  * the class in which beggins the game 
- * @author Hugo Enrique Limon Castillo, Estefania Cortez Gutierrez
+ * @author Hugo Enrique Limon Castillo, Valeria Estefania Cortez Gutierrez
  * @version (a version number or a date)
  */
 public class Mundo extends KinectWorld
@@ -91,6 +91,117 @@ public class Mundo extends KinectWorld
         sonido=new GreenfootSound("mundo.mid");
     }
 
+
+    public void act(){
+
+        super.act();
+        if(!isConnected()){
+            
+            errorNoConectado();            
+            return;
+        }
+
+        users = getTrackedUsers();
+        if(users.length==0){
+            return;
+        }
+
+        numObjetos=numberOfObjects();
+        if(numObjetos>12&&nivel==2){
+            addObject(n1, 400,150);
+        }
+        if(numObjetos==12){
+            if(nivel==2)
+            {
+                removeObject(n1);
+                nivel=3; 
+                addObject(n2, 400,150);
+                creaComida(vel2);
+
+            }else{
+
+                if(nivel==3)
+                {
+                    removeObject(n2);
+                    nivel=4;
+                    addObject(n3,400,150);
+                    creaComida(vel3);
+                }else
+                if(nivel==4)
+                {
+                    removeObject(n3);
+                    addObject(n4,400,150);
+                    creaComida(vel4);
+
+                }
+
+                if(nivel==3)
+                {
+                    nivel=4;
+                    creaComida(vel3);
+                }else
+                if(nivel==4)
+                {
+                    creaComida(vel4);
+                }
+
+            }  
+        }
+        puntaje=puntaje+eliminaComidaS();
+        puntaje=puntaje+eliminaComidaM();
+        System.out.println("numero objetos"+numObjetos);
+        if(!sonido.isPlaying()){
+            sonido.play();
+        }
+
+        if(band==0){
+            t.mark();
+            addObject(aviso,centroPx,centroPy);
+            aviso.setImage("1.png");
+            aviso.setImage(aviso.imagen(200,200));
+            band=2;
+            sonido.play();
+        }
+        if(band==2&&t.millisElapsed()>500){
+            aviso.setImage("2.png");
+            aviso.setImage(aviso.imagen(200,200));
+            band=3;
+        }
+        if(band==3&&t.millisElapsed()>1000){
+            aviso.setImage("3.png");
+            aviso.setImage(aviso.imagen(200,200));
+            band=4;
+        }
+        if(band==4&&t.millisElapsed()>1500){
+            aviso.setImage("go.png");
+            aviso.setImage(aviso.imagen(200,200));
+            band=5;
+        }
+
+        if(band==5&&t.millisElapsed()>2000)
+        {
+            removeObject(aviso);
+            creaComida(vel1);
+            band=6;    
+        }
+
+        //CUANDO PIERDA O TERMINE EL JUEGO
+
+          if(puntaje<-150){
+            if (UserInfo.isStorageAvailable()) {
+                UserInfo myInfo = UserInfo.getMyInfo();
+                if (puntaje > myInfo.getScore()) {
+                    myInfo.setScore(puntaje);
+                    myInfo.store();  // write back to server
+                }
+            }
+            addObject(new ScoreBoard(800, 600), getWidth() / 2, getHeight() / 2);
+        }
+        
+        cayoComida();
+
+    }
+    
     public void creaComida(int vel){
         int i=0;
         int rand;
@@ -248,127 +359,6 @@ public class Mundo extends KinectWorld
                 timer.mark();
             }
         }
-
-    }
-
-    public void act(){
-
-        super.act();
-        if(!isConnected()){
-            
-            errorNoConectado();            
-            return;
-        }
-
-        users = getTrackedUsers();
-        if(users.length==0){
-            return;
-        }
-
-        numObjetos=numberOfObjects();
-        if(numObjetos>12&&nivel==2){
-            addObject(n1, 400,150);
-        }
-        if(numObjetos==12){
-            if(nivel==2)
-            {
-                removeObject(n1);
-                nivel=3; 
-                addObject(n2, 400,150);
-                creaComida(vel2);
-
-            }else{
-
-                if(nivel==3)
-                {
-                    removeObject(n2);
-                    nivel=4;
-                    addObject(n3,400,150);
-                    creaComida(vel3);
-                }else
-                if(nivel==4)
-                {
-                    removeObject(n3);
-                    addObject(n4,400,150);
-                    creaComida(vel4);
-
-                }
-
-                if(nivel==3)
-                {
-                    nivel=4;
-                    creaComida(vel3);
-                }else
-                if(nivel==4)
-                {
-                    creaComida(vel4);
-                }
-
-            }  
-        }
-        puntaje=puntaje+eliminaComidaS();
-        puntaje=puntaje+eliminaComidaM();
-        System.out.println("numero objetos"+numObjetos);
-        if(!sonido.isPlaying()){
-            sonido.play();
-        }
-
-        if(band==0){
-            t.mark();
-            addObject(aviso,centroPx,centroPy);
-            aviso.setImage("1.png");
-            aviso.setImage(aviso.imagen(200,200));
-            band=2;
-            sonido.play();
-        }
-        if(band==2&&t.millisElapsed()>500){
-            aviso.setImage("2.png");
-            aviso.setImage(aviso.imagen(200,200));
-            band=3;
-        }
-        if(band==3&&t.millisElapsed()>1000){
-            aviso.setImage("3.png");
-            aviso.setImage(aviso.imagen(200,200));
-            band=4;
-        }
-        if(band==4&&t.millisElapsed()>1500){
-            aviso.setImage("go.png");
-            aviso.setImage(aviso.imagen(200,200));
-            band=5;
-        }
-
-        if(band==5&&t.millisElapsed()>2000)
-        {
-            removeObject(aviso);
-            creaComida(vel1);
-            band=6;    
-        }
-
-        //CUANDO PIERDA O TERMINE EL JUEGO
-
-        /*if(puntaje<=(-50)){
-            if (UserInfo.isStorageAvailable()) {
-                UserInfo myInfo = UserInfo.getMyInfo();
-                if (puntaje > myInfo.getScore()) {
-                    myInfo.setScore(puntaje);
-                    myInfo.store();  // write back to server
-                }
-            }
-            addObject(new ScoreBoard(800, 600), getWidth() / 2, getHeight() / 2);
-        }*/
-
-        if(puntaje<-150){
-            if (UserInfo.isStorageAvailable()) {
-                UserInfo myInfo = UserInfo.getMyInfo();
-                if (puntaje > myInfo.getScore()) {
-                    myInfo.setScore(puntaje);
-                    myInfo.store();  // write back to server
-                }
-            }
-            addObject(new ScoreBoard(800, 600), getWidth() / 2, getHeight() / 2);
-        }
-        
-        cayoComida();
 
     }
 
