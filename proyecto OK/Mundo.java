@@ -1,40 +1,25 @@
 import greenfoot.*;
 
 /**
- * the class in which begins of the game 
+ * the class in which beggins the game 
  * @author Hugo Enrique Limon Castillo, Estefania Cortez Gutierrez
  * @version (a version number or a date)
  */
 public class Mundo extends KinectWorld
 {
-
-    /**
-     * 
-     */
-
     private final int ancho=800; //se crea consatnte el ancho y el alto
     private final int alto=600;
     private final int centroPx=ancho/2;
     private final int centroPy=alto/2;
     private SimpleTimer t;
     private Aviso aviso;
-    /**
-     * ssss
-     */
-    private int band;
-    
-    private GreenfootSound sonido;
-    /**
-      sssss  
-     */
+    private int band;   
+    private GreenfootSound sonido;   
     public static final double SCALE = 4.0;
-
     private static final int THUMBNAIL_WIDTH = 80;
     private static final int THUMBNAIL_HEIGHT = 60;
-
     private Stick stick;
     private UserData[] users;
-
     private Plato p1;
     private Plato p2;
     private int puntaje;
@@ -47,15 +32,11 @@ public class Mundo extends KinectWorld
     private int vel2;
     private int vel1;
     private TError errorNE;
-
     private Nivel1 n1;
     private Nivel2 n2;
     private Nivel3 n3;
     private Nivel4 n4;
-
-    
     private int nivel;
-    
     SimpleTimer timer;
     public Mundo()
     {    
