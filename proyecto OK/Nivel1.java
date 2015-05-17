@@ -4,7 +4,7 @@ import greenfoot.*;
  * This class is used to create the signal of the level 1 in the game
  * 
  * @author Hugo Limón, Valeria Cortez 
- * @version 17/05/2015
+ * @version 0.1
  */
 public class Nivel1 extends Actor
 {

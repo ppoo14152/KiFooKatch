@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BodyPart here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Class downloades from http://www.greenfoot.org/doc/kinect
  */
 public class BodyPart extends Actor
 {

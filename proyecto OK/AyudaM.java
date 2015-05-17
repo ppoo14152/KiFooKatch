@@ -1,8 +1,8 @@
 import greenfoot.*;
 
 /**
- * this class is for show the help and show the instructions of the game 
- * @author Hugo Enrique Limon Castillo, Estefania Cortez gutierrez
+ * This class is used to show the help instructions of the game. 
+ * @author Hugo Limón, Valeria Cortez
  * @version 0.1
  */
 public class AyudaM extends World
@@ -53,6 +53,10 @@ public class AyudaM extends World
    
      
     }
+    
+    /**
+     * This method is used to draw the buttons and the text.
+     */
     public void dibujaEntorno(){
        addObject(bSalir,700,550);
        addObject(text,350,250);

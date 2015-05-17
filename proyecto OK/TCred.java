@@ -1,10 +1,10 @@
 import greenfoot.*;
 
 /**
+ * This class is used for the text to show the credits
  * 
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Hugo Limón, Valeria Cortez 
+ * @version 0.1
  */
 public class TCred extends Texto
 {

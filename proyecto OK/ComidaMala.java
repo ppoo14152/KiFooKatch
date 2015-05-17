@@ -1,19 +1,14 @@
 import greenfoot.*;
 
 /**
- * Write a description of class ComidaMala here.
+ * This class is used for the junk food.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Hugo Limón, Valeria Cortez 
+ * @version 0.1
  */
 public class ComidaMala extends Comida
 {
-    /**
-     * Act - do whatever the ComidaMala wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-        // Add your action code here.
-    }    
+    
+    
+    public ComidaMala(){}
 }

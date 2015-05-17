@@ -1,8 +1,8 @@
 import greenfoot.*;
 
 /**
- * this class is for show the credits of the game
- * @author Hugo Enrique Limon Castillo, Estefania Cortez Gutierrez 
+ * This class is used to show the credits of the game.
+ * @author Hugo Limón, Valeria Cortez
  * @version 0.1
  */
 public class Creditos extends World
@@ -54,6 +54,10 @@ public class Creditos extends World
    
      
     }
+    
+    /**
+     * This method is used to draw the buttons and the text.
+     */
     public void dibujaEntorno(){
        addObject(bSalir,700,550);
        addObject(text,450,275);

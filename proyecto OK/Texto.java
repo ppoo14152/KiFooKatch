@@ -1,10 +1,10 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Texto here.
+ * This class is used for the various texts in the project
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Hugo Limón, Valeria Cortez 
+ * @version 0.1
  */
 public class Texto extends Actor
 {

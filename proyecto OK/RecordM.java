@@ -2,7 +2,7 @@ import greenfoot.*;
 
 /**
  * This class is used to show the records of users.
- * @author Hugo Enrique Limon Castillo, Estefania Cortez Gutierrez 
+ * @author Hugo Limón, Valeria Cortez
  * @version 0.1
  */
 public class RecordM extends World

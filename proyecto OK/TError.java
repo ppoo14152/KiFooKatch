@@ -1,10 +1,10 @@
 import greenfoot.*;
 
 /**
- * Write a description of class TError here.
+ * This class is used to create the text to display an error if the Kinect sensor is not connected
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Hugo Limón, Valeria Cortez 
+ * @version 0.1
  */
 public class TError extends Texto
 {

@@ -5,4 +5,5 @@ comment1.params=
 comment1.target=void\ act()
 comment2.params=
 comment2.target=void\ dibujaEntorno()
+comment2.text=\r\n\ in\ this\ part\ \ only\ add\ the\ objects\ to\ menu,\ like\ bottons\ and\ the\ ScoreBoard\r\n
 numComments=3

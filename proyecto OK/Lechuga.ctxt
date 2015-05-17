@@ -1,8 +1,11 @@
 #BlueJ class context
 comment0.params=vel
 comment0.target=Lechuga(int)
+comment0.text=\r\nThe\ constructor\ of\ the\ class\ Lechuga,\ sets\ the\ fall\ velocity\r\n@param\ vel\ recives\ the\ fall\ velocity\r\n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\r\n\ This\ method\ is\ used\ for\ the\ object\ to\ fall\ when\ the\ run\ button\ is\ pressed\ \r\n
 comment2.params=
 comment2.target=greenfoot.GreenfootImage\ imagen()
+comment2.text=\r\n\ This\ method\ is\ used\ to\ return\ an\ scaled\ image\ for\ the\ given\ object\r\n\ @param\ x\ is\ the\ size\ in\ x\ axis\r\n\ @param\ y\ is\ the\ size\ in\ the\ y\ axis\r\n\ @return\ The\ scaled\ image\ for\ the\ object\ to\ use\r\n
 numComments=3

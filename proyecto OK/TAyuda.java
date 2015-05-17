@@ -1,10 +1,10 @@
 import greenfoot.*;
 
 /**
- * Write a description of class TAyuda here.
+ * This class is used to create the text to show the instruction for the "Help" section
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Hugo Limón, Valeria Cortez 
+ * @version 0.1
  */
 public class TAyuda extends Texto
 {

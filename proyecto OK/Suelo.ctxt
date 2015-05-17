@@ -3,37 +3,17 @@ comment0.params=
 comment0.target=Suelo()
 comment1.params=
 comment1.target=void\ act()
-<<<<<<< .mine
 comment1.text=\r\n\ The\ act\ method\ only\ check\ whether\ if\ the\ floor\ is\ touching\ any\ kind\ of\ food,\r\n\ which\ would\ mean\ that\ the\ player\ let\ the\ food\ spill\r\n
-=======
-comment1.text=\r\n\ act\ remove\ the\ food\ that\ touch\ its\ \r\n
->>>>>>> .r85
 comment2.params=x\ y
 comment2.target=greenfoot.GreenfootImage\ imagen(int,\ int)
-<<<<<<< .mine
 comment2.text=\r\n\ This\ method\ is\ used\ to\ return\ an\ scaled\ image\ for\ the\ given\ object\r\n\ @param\ x\ is\ the\ size\ in\ x\ axis\r\n\ @param\ y\ is\ the\ size\ in\ the\ y\ axis\r\n\ @return\ The\ scaled\ image\ for\ the\ object\ to\ use\r\n
-=======
-comment2.text=\r\n\ this\ method\ is\ for\ change\ the\ size\ of\ the\ image\r\n
->>>>>>> .r85
 comment3.params=
 comment3.target=boolean\ tocaComidaSana()
-<<<<<<< .mine
 comment3.text=\r\n\ This\ method\ determines\ whether\ if\ the\ fallen\ food\ was\ healthy\r\n\ @return\ true\ if\ touching,\ false\ if\ not\r\n
-=======
-comment3.text=\r\n\ \ tocaComidaSana()\r\n\ \ @return\ it\ return\ boolean\ when\ it\ is\ touching\ an\ object\ of\ kind\ ComidaSana\r\n
->>>>>>> .r85
 comment4.params=
 comment4.target=boolean\ tocaComida()
-<<<<<<< .mine
-comment4.text=\r\n\ This\ method\ determines\ wheter\ if\ the\ floor\ is\ touching\ any\ kind\ of\ food\r\n\ @return\ true\ if\ touching,\ flase\ if\ not\r\n
-=======
-comment4.text=\r\n\ \ tocaComidaSana()\r\n\ \ @return\ it\ return\ boolean\ when\ it\ is\ touching\ an\ object\ of\ kind\ Comida\r\n
->>>>>>> .r85
+comment4.text=\r\n\ This\ method\ determines\ whether\ if\ the\ floor\ is\ touching\ any\ kind\ of\ food\r\n\ @return\ true\ if\ touching,\ flase\ if\ not\r\n
 comment5.params=
 comment5.target=void\ eliminaComida()
-<<<<<<< .mine
 comment5.text=\r\n\ This\ method\ removes\ the\ fallen\ food\r\n
-=======
-comment5.text=\r\n\ \ \ \ tocaComidaSana()\r\n\ this\ method\ it\ for\ revome\ the\ foot\ that\ touch\ the\ floor\r\n
->>>>>>> .r85
 numComments=6

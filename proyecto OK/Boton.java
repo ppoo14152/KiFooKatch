@@ -4,7 +4,7 @@ import greenfoot.*;
  * Class for all the butons used in tthe menu
  * 
  * @author Hugo Limón, Valeria Cortez 
- * @version 17/05/2015
+ * @version 0.1
 */
 public class Boton extends Actor
 {

@@ -1,20 +1,17 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Comida here.
+ * This class is used for the food
  * 
  * @author Hugo Limón, Valeria Cortez 
  * @version 1.0
  */
 public class Comida extends Actor
 {
-    /**
-     * Act - do whatever the Comida wants to do. This method is called whenever
-     * 
-     */
+    
     private SimpleTimer timer;
     /**
-     * this varible is used to set velocity of food's fall
+     * This varible is used to set the velocity of the food's fall.
      */
     public int velCaida;
     public Comida(){
@@ -24,7 +21,7 @@ public class Comida extends Actor
 
     }
     /**
-     * this method is make the food fall from the sky
+     * This method is used to make the food fall from the sky.
      */
     public void cae() 
     {
@@ -38,7 +35,8 @@ public class Comida extends Actor
         
     }   
     /**
-     * this method is for check the object which touch the food
+     * This method is used to check whether if the food fell to the floor.
+     * @return true if it feel, false if it didn't.
      */
     public boolean tocaComida(){
         return(this.isTouching(Comida.class));

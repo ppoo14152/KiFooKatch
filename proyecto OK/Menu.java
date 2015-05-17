@@ -1,9 +1,8 @@
 import greenfoot.*;
 
 /**
- * Esta es la clase principal del juego, este es el menu 
- * en el cual se tendra acceso a los creditos, la ayuda, los records y al juego 
- * @author Hugo Enrique Limon Castillo, Estefania Cortez Gutierrez 
+ * This class is used to display a Menu for the game, help, records and credits.
+ * @author Hugo Limón, Valeria Cortez
  * @version 0.1
  */
 
@@ -11,7 +10,7 @@ public class Menu extends World
 {
 
     /**
-    * se crea un boton Start,un boton ayuda, un boton creditos, un boton record 
+    * The buttons
     */
     private Start bStart;
     private Ayuda bAyuda;
@@ -27,9 +26,9 @@ public class Menu extends World
     private World wa;
     private World wr;
     private MouseInfo m;
-     /**
-         *it create the objects of the world Menu(), like the bottons and the worlds.
-      */
+    /**
+    * Constructor
+     */
     public Menu()
     {    
        super(800,600,1);
@@ -46,8 +45,9 @@ public class Menu extends World
        sonido= new GreenfootSound("intro.mid");
        sonidoB= new GreenfootSound("click.mp3");
     }
+    
     /**
-     *Here, it check the info of the mouse and in which botton the user is clicked 
+     *Here, it checks the info of the mouse and in which botton the user is clicked 
      */
     public void act(){
      m=Greenfoot.getMouseInfo(); 
@@ -87,8 +87,9 @@ public class Menu extends World
       }
      }
     }
+    
     /**
-     * Here, add the objects bottons to the world with its coordinates  
+     * Here, add the buttons are added 
      */
     public void dibujaEntorno(){
        addObject(bStart,200,300);
@@ -98,6 +99,9 @@ public class Menu extends World
        addObject(t,400,200);
     }
     
+    /**
+     * This method pauses the music if the game is paused or stopped.
+     */
     public void stopped(){
     sonido.pause();
     }
