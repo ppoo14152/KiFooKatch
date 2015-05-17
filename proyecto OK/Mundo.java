@@ -1,16 +1,14 @@
 import greenfoot.*;
 
 /**
- * Write a description of class menu here.
- * 
- * @author (your name) 
+ * the class in which begins of the game 
+ * @author Hugo Enrique Limon Castillo, Estefania Cortez Gutierrez
  * @version (a version number or a date)
  */
 public class Mundo extends KinectWorld
 {
 
     /**
-     * Constructor for objects of class menu.
      * 
      */
 
@@ -20,9 +18,15 @@ public class Mundo extends KinectWorld
     private final int centroPy=alto/2;
     private SimpleTimer t;
     private Aviso aviso;
+    /**
+     * ssss
+     */
     private int band;
+    
     private GreenfootSound sonido;
-
+    /**
+      sssss  
+     */
     public static final double SCALE = 4.0;
 
     private static final int THUMBNAIL_WIDTH = 80;

@@ -1,17 +1,19 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Creditos here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * This class is used to show the records of users.
+ * @author Hugo Enrique Limon Castillo, Estefania Cortez Gutierrez 
+ * @version 0.1
  */
 public class RecordM extends World
 {
 
     /**
-     * Constructor for objects of class Creditos.
-     * 
+     * Constructor for objects of class RecordM.
+     * bSalir: used to go back to principal menu
+     * we create te variables sonido and sonidoB to play the music of the game,
+     * also crate the world of the menu, to return the page to menu.
+     * and the mouseInfo to check where it is clicked.
      */
     private Salir bSalir;
     private GreenfootSound sonido;
@@ -22,9 +24,11 @@ public class RecordM extends World
     
     public RecordM(World w)
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
-        
+         /**
+          * in this part we used the variable bSalir to go back to menu
+          * 
+            */
         bSalir = new Salir();
 
         wm= w;
@@ -57,6 +61,9 @@ public class RecordM extends World
    
      
     }
+    /**
+     * in this part  only add the objects to menu, like bottons and the ScoreBoard
+     */
     public void dibujaEntorno(){
        addObject(bSalir,700,550);
        addObject(new ScoreBoard(600, 400), getWidth() / 2, getHeight() / 2);

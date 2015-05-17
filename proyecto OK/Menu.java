@@ -1,19 +1,18 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Menu here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Esta es la clase principal del juego, este es el menu 
+ * en el cual se tendra acceso a los creditos, la ayuda, los records y al juego 
+ * @author Hugo Enrique Limon Castillo, Estefania Cortez Gutierrez 
+ * @version 0.1
  */
 
 public class Menu extends World
 {
 
     /**
-     * Constructor for objects of class Menu.
-     * 
-     */
+    * se crea un boton Start,un boton ayuda, un boton creditos, un boton record 
+    */
     private Start bStart;
     private Ayuda bAyuda;
     private Creds bCreds;
@@ -28,49 +27,28 @@ public class Menu extends World
     private World wa;
     private World wr;
     private MouseInfo m;
-    
-    
-    //public static final double SCALE = 1.25;
-    //private static final int THUMBNAIL_WIDTH = 80;
-    
-    //private static final int THUMBNAIL_HEIGHT = 60;
-     //private Stick stick;
-    //private UserData[] users;
-    
-
+     /**
+         *it create the objects of the world Menu(), like the bottons and the worlds.
+      */
     public Menu()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(800,600,1);
-
-       
-       //super(THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT, SCALE, false);
-
-        //final int width = getWidth();
-        //final int height = getHeight();
-        
-        //addObject(new Thumbnail(), width - THUMBNAIL_WIDTH/2, height - THUMBNAIL_HEIGHT/2);
-       
-        t=new Titulo();
-        bStart=new Start();
-        bAyuda= new Ayuda();
-        bCreds= new Creds();
-        bRecord= new Record();
-        
-        wj=new Mundo();
-
+       super(800,600,1);
+       t=new Titulo();
+       bStart=new Start();
+       bAyuda= new Ayuda();
+       bCreds= new Creds();
+       bRecord= new Record();
+       wj=new Mundo();
        wc= new Creditos(this);
        wa= new AyudaM(this);
        wr= new RecordM(this);
-
-        
-        
-        
-        dibujaEntorno();
-        
-        sonido= new GreenfootSound("intro.mid");
-        sonidoB= new GreenfootSound("click.mp3");
+       dibujaEntorno();
+       sonido= new GreenfootSound("intro.mid");
+       sonidoB= new GreenfootSound("click.mp3");
     }
+    /**
+     *Here, it check the info of the mouse and in which botton the user is clicked 
+     */
     public void act(){
      m=Greenfoot.getMouseInfo(); 
     
@@ -109,6 +87,9 @@ public class Menu extends World
       }
      }
     }
+    /**
+     * Here, add the objects bottons to the world with its coordinates  
+     */
     public void dibujaEntorno(){
        addObject(bStart,200,300);
        addObject(bAyuda,600,300);

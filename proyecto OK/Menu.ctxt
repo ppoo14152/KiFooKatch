@@ -1,10 +1,13 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Menu()
+comment0.text=\r\nit\ create\ the\ objects\ of\ the\ world\ Menu(),\ like\ the\ bottons\ and\ the\ worlds.\r\n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\r\nHere,\ it\ check\ the\ info\ of\ the\ mouse\ and\ in\ which\ botton\ the\ user\ is\ clicked\ \r\n
 comment2.params=
 comment2.target=void\ dibujaEntorno()
+comment2.text=\r\n\ Here,\ add\ the\ objects\ bottons\ to\ the\ world\ with\ its\ coordinates\ \ \r\n
 comment3.params=
 comment3.target=void\ stopped()
 numComments=4
