@@ -1,10 +1,9 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Creditos here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * this class is for show the credits of the game
+ * @author Hugo Enrique Limon Castillo, Estefania Cortez Gutierrez 
+ * @version 0.1
  */
 public class Creditos extends World
 {
