@@ -253,7 +253,7 @@ public class Mundo extends KinectWorld
 
         //CUANDO PIERDA O TERMINE EL JUEGO
 
-        if(puntaje<=(-50)){
+        /*if(puntaje<=(-50)){
             if (UserInfo.isStorageAvailable()) {
                 UserInfo myInfo = UserInfo.getMyInfo();
                 if (puntaje > myInfo.getScore()) {
@@ -262,7 +262,7 @@ public class Mundo extends KinectWorld
                 }
             }
             addObject(new ScoreBoard(800, 600), getWidth() / 2, getHeight() / 2);
-        }
+        }*/
 
         if(puntaje<-150){
             if (UserInfo.isStorageAvailable()) {
@@ -274,6 +274,8 @@ public class Mundo extends KinectWorld
             }
             addObject(new ScoreBoard(800, 600), getWidth() / 2, getHeight() / 2);
         }
+        
+        cayoComida();
 
     }
 
@@ -320,6 +322,15 @@ public class Mundo extends KinectWorld
     
     public void errorNoConectado(){
     addObject(errorNE, 400,300);
+    }
+    
+    public void cayoComida(){
+        if(suelo.tocaComida()){
+            if(suelo.tocaComidaSana()){
+                puntaje=puntaje-5;
+            }
+            suelo.eliminaComida();
+        }
     }
 
 }

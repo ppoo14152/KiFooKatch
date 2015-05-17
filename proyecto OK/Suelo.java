@@ -24,4 +24,16 @@ public class Suelo extends Actor
     
     }
     
+    public boolean tocaComidaSana(){
+    return(this.isTouching(ComidaSana.class));
+    }
+    
+    public boolean tocaComida(){
+        return(this.isTouching(Comida.class));
+    
+    }
+    
+    public void eliminaComida(){
+        removeTouching(Comida.class);    
+    }
 }
