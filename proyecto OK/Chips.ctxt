@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=vel
+comment0.target=Chips(int)
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=greenfoot.GreenfootImage\ imagen()
+numComments=3

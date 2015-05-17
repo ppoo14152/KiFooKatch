@@ -10,12 +10,15 @@ public class Suelo extends Actor
 {
     public Suelo() 
     {
-        setImage(imagen(800,30));// Add your action code here.
+        setImage(imagen(800,30));
     }
+    
     public void act(){
-     if(isTouching(Comida.class)){
-        removeTouching(Comida.class);
+        
+        if(isTouching(Comida.class)){
+            removeTouching(Comida.class);
         }
+    
     }
     public GreenfootImage imagen(int x, int y){
       GreenfootImage i=getImage();

@@ -115,8 +115,8 @@ public class Mundo extends KinectWorld
         int rand;
         int aux=0; // esta variable, es un contador y  sirve para identificar que se hayan creado los diez objetos comida
         Comida varObjeto=new Comida();
-        for(i=0;aux<10;i++){
-            rand=Greenfoot.getRandomNumber(5);
+        for(i=0;aux<30;i++){
+            rand=Greenfoot.getRandomNumber(17);
             if(timer.millisElapsed()>1000)
             {
                 switch(rand)
@@ -153,6 +153,114 @@ public class Mundo extends KinectWorld
                    }
                     aux++;
                     break; 
+                    
+                    case 5:varObjeto=new Lechuga(vel);
+                    addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                    if(varObjeto.tocaComida()){
+                    removeObject(varObjeto);
+                
+                   }
+                   aux++;
+                   break;
+                   
+                   case 6:varObjeto=new Manzana(vel);
+                    addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                    if(varObjeto.tocaComida()){
+                    removeObject(varObjeto);
+                
+                   }
+                   aux++;
+                   break;
+                   
+                   case 7:varObjeto=new Papa(vel);
+                    addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                    if(varObjeto.tocaComida()){
+                    removeObject(varObjeto);
+                
+                   }
+                   aux++;
+                   break;
+                   
+                   case 8:varObjeto=new Uva(vel);
+                    addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                    if(varObjeto.tocaComida()){
+                    removeObject(varObjeto);
+                
+                   }
+                   aux++;
+                   break;
+                   
+                   case 9:varObjeto=new Zanahoria(vel);
+                    addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                    if(varObjeto.tocaComida()){
+                    removeObject(varObjeto);
+                
+                   }
+                   aux++;
+                   break;
+                   
+                   case 10:varObjeto=new Chips(vel);
+                    addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                    if(varObjeto.tocaComida()){
+                    removeObject(varObjeto);
+                
+                   }
+                   aux++;
+                   break;
+                   
+                   case 11:varObjeto=new Chocolate(vel);
+                    addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                    if(varObjeto.tocaComida()){
+                    removeObject(varObjeto);
+                
+                   }
+                   aux++;
+                   break;
+                   
+                   case 12:varObjeto=new Soda(vel);
+                    addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                    if(varObjeto.tocaComida()){
+                    removeObject(varObjeto);
+                
+                   }
+                   aux++;
+                   break;
+                   
+                   case 13:varObjeto=new Doritos(vel);
+                    addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                    if(varObjeto.tocaComida()){
+                    removeObject(varObjeto);
+                
+                   }
+                   aux++;
+                   break;
+                   
+                   case 14:varObjeto=new Dulces(vel);
+                    addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                    if(varObjeto.tocaComida()){
+                    removeObject(varObjeto);
+                
+                   }
+                   aux++;
+                   break;
+                   
+                   case 15:varObjeto=new HotDog(vel);
+                    addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                    if(varObjeto.tocaComida()){
+                    removeObject(varObjeto);
+                
+                   }
+                   aux++;
+                   break;
+                   
+                   case 16:varObjeto=new Pizza(vel);
+                    addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                    if(varObjeto.tocaComida()){
+                    removeObject(varObjeto);
+                
+                   }
+                   aux++;
+                   break;
 
                 }
                 
