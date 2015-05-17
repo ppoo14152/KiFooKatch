@@ -340,7 +340,7 @@ public class Stick  extends Actor
         
         heads = new GreenfootImage[10];
         for (int i = 0; i < heads.length; i++) {
-            heads[i] = new GreenfootImage("head"+".png");
+            //heads[i] = new GreenfootImage("head"+".png");
         }
         
         
