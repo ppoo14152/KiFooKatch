@@ -1,9 +1,9 @@
 import greenfoot.*;
 
 /**
- * the class in which beggins the game 
- * @author Hugo Enrique Limon Castillo, Valeria Estefania Cortez Gutierrez
- * @version (a version number or a date)
+ * The world class of the game. 
+ * @author Hugo Limón, Valeria Cortez
+ * @version 0.1
  */
 public class Mundo extends KinectWorld
 {
@@ -37,9 +37,13 @@ public class Mundo extends KinectWorld
     private Nivel3 n3;
     private Nivel4 n4;
     private int nivel;
+    private int soundP=0;
     SimpleTimer timer;
-    public Mundo()
-    {    
+    
+    /**
+     * The World constructor initializes the instance variables to control the levels, the scores and the timer.
+     */
+    public Mundo() {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         //super(800, 600, 1);
         super(THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT, SCALE, false);
@@ -88,10 +92,17 @@ public class Mundo extends KinectWorld
         setBackground("madera.jpg");
 
         band=0;
+        soundP=1;
         sonido=new GreenfootSound("mundo.mid");
     }
-
-
+    
+    /**
+     * This method is called whenever the "Run" button is pressed,
+     * it confirms if the Kinect sensor is connected,
+     * it creates the food objects falling from the sky,
+     * checks the collisions between the objects and
+     * increases the level of the game according to the number of the fallen objects.
+     */
     public void act(){
 
         super.act();
@@ -202,6 +213,9 @@ public class Mundo extends KinectWorld
 
     }
     
+    /**
+     * This method creates the food falling from the sky.
+     */
     public void creaComida(int vel){
         int i=0;
         int rand;
@@ -213,146 +227,165 @@ public class Mundo extends KinectWorld
             {
                 switch(rand)
                 {
-                    case 1:varObjeto=new Hamburguesa(vel);
-                    addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
-                    if(varObjeto.tocaComida()){
-                    removeObject(varObjeto);
+                    case 1:
+                          varObjeto=new Hamburguesa(vel);
+                          addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                          if(varObjeto.tocaComida()){
+                              removeObject(varObjeto);
+                  
+                          }
+                         aux++;
+                         break;
+                         
+                   case 2:
+                         varObjeto=new Naranja(vel);
+                         addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30); 
+                         if(varObjeto.tocaComida()){
+                             removeObject(varObjeto);
                 
-                   }
-                    aux++;
-                    break;
-                    case 2:varObjeto=new Naranja(vel);
-                    addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30); 
-                    if(varObjeto.tocaComida()){
-                    removeObject(varObjeto);
+                         }
+                         aux++;
+                         break;
+                         
+                    case 3:
+                         varObjeto= new Cheetos(vel);
+                         addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                         if(varObjeto.tocaComida()){
+                             removeObject(varObjeto);
                 
-                   }
-                    aux++;
-                    break;
-                    case 3:varObjeto= new Cheetos(vel);
-                    addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
-                    if(varObjeto.tocaComida()){
-                    removeObject(varObjeto);
+                         }
+                        aux++;
+                        break;
+                        
+                    case 4:
+                        varObjeto= new Platano(vel);
+                        addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                        if(varObjeto.tocaComida()){
+                           removeObject(varObjeto);
                 
-                   }
-                    aux++;
-                    break;
-                    case 4:varObjeto= new Platano(vel);
-                    addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
-                    if(varObjeto.tocaComida()){
-                    removeObject(varObjeto);
-                
-                   }
-                    aux++;
-                    break; 
+                        }
+                       aux++;
+                       break; 
                     
-                    case 5:varObjeto=new Lechuga(vel);
-                    addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
-                    if(varObjeto.tocaComida()){
-                    removeObject(varObjeto);
+                    case 5:
+                        varObjeto=new Lechuga(vel);
+                        addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                        if(varObjeto.tocaComida()){
+                            removeObject(varObjeto);
                 
-                   }
-                   aux++;
-                   break;
+                        }
+                        aux++;
+                        break;
                    
-                   case 6:varObjeto=new Manzana(vel);
-                    addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
-                    if(varObjeto.tocaComida()){
-                    removeObject(varObjeto);
+                   case 6:
+                        varObjeto=new Manzana(vel);
+                        addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                        if(varObjeto.tocaComida()){
+                             removeObject(varObjeto);
                 
-                   }
-                   aux++;
-                   break;
+                        }
+                        aux++;
+                        break;
                    
-                   case 7:varObjeto=new Papa(vel);
-                    addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
-                    if(varObjeto.tocaComida()){
-                    removeObject(varObjeto);
+                   case 7:
+                        varObjeto=new Papa(vel);
+                        addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                        if(varObjeto.tocaComida()){
+                            removeObject(varObjeto);
                 
-                   }
-                   aux++;
-                   break;
+                        }
+                        aux++;
+                        break;
                    
-                   case 8:varObjeto=new Uva(vel);
-                    addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
-                    if(varObjeto.tocaComida()){
-                    removeObject(varObjeto);
+                   case 8:
+                       varObjeto=new Uva(vel);
+                       addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                       if(varObjeto.tocaComida()){
+                           removeObject(varObjeto);
                 
-                   }
-                   aux++;
-                   break;
+                       }
+                       aux++;
+                       break;
                    
-                   case 9:varObjeto=new Zanahoria(vel);
-                    addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
-                    if(varObjeto.tocaComida()){
-                    removeObject(varObjeto);
+                   case 9:
+                       varObjeto=new Zanahoria(vel);
+                       addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                       if(varObjeto.tocaComida()){
+                           removeObject(varObjeto);
                 
-                   }
-                   aux++;
-                   break;
+                       }
+                       aux++;
+                       break;
                    
-                   case 10:varObjeto=new Chips(vel);
-                    addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
-                    if(varObjeto.tocaComida()){
-                    removeObject(varObjeto);
+                   case 10:
+                       varObjeto=new Chips(vel);
+                       addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                       if(varObjeto.tocaComida()){
+                          removeObject(varObjeto);
                 
-                   }
-                   aux++;
-                   break;
+                       }
+                       aux++;
+                       break;
                    
-                   case 11:varObjeto=new Chocolate(vel);
-                    addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
-                    if(varObjeto.tocaComida()){
-                    removeObject(varObjeto);
+                   case 11:
+                       varObjeto=new Chocolate(vel);
+                       addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                       if(varObjeto.tocaComida()){
+                           removeObject(varObjeto);
                 
-                   }
-                   aux++;
-                   break;
+                       }
+                      aux++;
+                      break;
                    
-                   case 12:varObjeto=new Soda(vel);
-                    addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
-                    if(varObjeto.tocaComida()){
-                    removeObject(varObjeto);
+                   case 12:
+                       varObjeto=new Soda(vel);
+                       addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                       if(varObjeto.tocaComida()){
+                           removeObject(varObjeto);
                 
-                   }
-                   aux++;
-                   break;
+                       }
+                       aux++;
+                       break;
                    
-                   case 13:varObjeto=new Doritos(vel);
-                    addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
-                    if(varObjeto.tocaComida()){
-                    removeObject(varObjeto);
+                   case 13:
+                       varObjeto=new Doritos(vel);
+                       addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                       if(varObjeto.tocaComida()){
+                           removeObject(varObjeto);
                 
-                   }
-                   aux++;
-                   break;
+                       }
+                       aux++;
+                       break;
                    
-                   case 14:varObjeto=new Dulces(vel);
-                    addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
-                    if(varObjeto.tocaComida()){
-                    removeObject(varObjeto);
+                   case 14:
+                       varObjeto=new Dulces(vel);
+                       addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                       if(varObjeto.tocaComida()){
+                           removeObject(varObjeto);
                 
-                   }
-                   aux++;
-                   break;
+                       }
+                       aux++;
+                       break;
                    
-                   case 15:varObjeto=new HotDog(vel);
-                    addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
-                    if(varObjeto.tocaComida()){
-                    removeObject(varObjeto);
+                   case 15:
+                       varObjeto=new HotDog(vel);
+                       addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                       if(varObjeto.tocaComida()){
+                            removeObject(varObjeto);
                 
-                   }
-                   aux++;
-                   break;
+                       }
+                       aux++;
+                       break;
                    
-                   case 16:varObjeto=new Pizza(vel);
-                    addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
-                    if(varObjeto.tocaComida()){
-                    removeObject(varObjeto);
+                   case 16:
+                       varObjeto=new Pizza(vel);
+                       addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                       if(varObjeto.tocaComida()){
+                           removeObject(varObjeto);
                 
-                   }
-                   aux++;
-                   break;
+                       }
+                       aux++;
+                       break;
 
                 }
                 
@@ -361,7 +394,11 @@ public class Mundo extends KinectWorld
         }
 
     }
-
+    
+    /**
+     * This method is used to eliminate the healthy food being touched by the plates.
+     * @return The value to increase the score.
+     */
     public int eliminaComidaS(){
 
         if(p1.isTouchComidaS()){
@@ -375,7 +412,11 @@ public class Mundo extends KinectWorld
         return 0;
 
     }
-
+    
+    /**
+     * This method is used to eliminate the junk food being touched by the plates.
+     * @return The value to decrease the score.
+     */
     public int eliminaComidaM(){
 
         if(p1.isTouchComidaM()){
@@ -389,7 +430,11 @@ public class Mundo extends KinectWorld
         return 0;
 
     }
-
+    
+    /**
+     * This method is  used to get the users detected by the Kinect.
+     * @return Null if not detecting anyone, a user if detecting someone.
+     */
     public UserData getUser(int ID)
     {
 
@@ -398,15 +443,26 @@ public class Mundo extends KinectWorld
         }
         return users[ID];
     }
-
+    
+    /**
+     * This method pauses the song if the game is stopped or paused.
+     */
     public void stopped(){
-        sonido.pause();
+        if(soundP==1){
+            sonido.pause();
+        }
     }
     
+    /**
+     * This method isplays a message if the Kinect is not connected.
+     */
     public void errorNoConectado(){
-    addObject(errorNE, 400,300);
+        addObject(errorNE, 400,300);
     }
     
+    /**
+     * This method checks wheter if any kind of food has fallen.
+     */
     public void cayoComida(){
         if(suelo.tocaComida()){
             if(suelo.tocaComidaSana()){

@@ -1,9 +1,11 @@
 #BlueJ class context
 comment0.params=w
 comment0.target=RecordM(greenfoot.World)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ RecordM.\r\n\ bSalir\:\ used\ to\ go\ back\ to\ the\ principal\ menu\r\n\ we\ create\ the\ variables\ sonido\ and\ sonidoB\ to\ play\ the\ music\ of\ the\ game,\r\n\ also\ crate\ the\ world\ menu,\ to\ return\ to\ the\ menu.\r\n\ and\ the\ mouseInfo\ to\ check\ where\ it\ is\ clicked.\r\n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\r\n\ This\ method\ is\ used\ whenever\ the\ run\ button\ is\ clicked,\ it\ only\ checks\ whether\ \r\n\ if\ the\ user\ is\ clicking\ on\ the\ "Exit"\ button.\r\n
 comment2.params=
 comment2.target=void\ dibujaEntorno()
-comment2.text=\r\n\ in\ this\ part\ \ only\ add\ the\ objects\ to\ menu,\ like\ bottons\ and\ the\ ScoreBoard\r\n
+comment2.text=\r\n\ This\ method\ is\ used\ to\ draw\ the\ objects\ in\ the\ world\r\n
 numComments=3

@@ -8,10 +8,7 @@ import greenfoot.*;
 public class Creditos extends World
 {
 
-    /**
-     * Constructor for objects of class Creditos.
-     * 
-     */
+    
     private Salir bSalir;
     private GreenfootSound sonido;
     private GreenfootSound sonidoB;
@@ -19,7 +16,10 @@ public class Creditos extends World
     private MouseInfo m;
     private TCred text;
    
-    
+    /**
+     * Constructor for objects of class Creditos.
+     * 
+     */
     public Creditos(World w)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -36,6 +36,10 @@ public class Creditos extends World
         
     }
     
+    /**
+     * This method is used whenever the "Run" button is clicked.
+     * It only checks wheter if the "Exit" button is being clicked.
+     */
     public void act(){
      m=Greenfoot.getMouseInfo(); 
      

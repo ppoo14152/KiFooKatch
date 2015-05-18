@@ -8,27 +8,24 @@ import greenfoot.*;
 public class RecordM extends World
 {
 
-    /**
-     * Constructor for objects of class RecordM.
-     * bSalir: used to go back to principal menu
-     * we create te variables sonido and sonidoB to play the music of the game,
-     * also crate the world of the menu, to return the page to menu.
-     * and the mouseInfo to check where it is clicked.
-     */
+    
     private Salir bSalir;
     private GreenfootSound sonido;
     private GreenfootSound sonidoB;
     private World wm;
     private MouseInfo m;
    
-    
+    /**
+     * Constructor for objects of class RecordM.
+     * bSalir: used to go back to the principal menu
+     * we create the variables sonido and sonidoB to play the music of the game,
+     * also crate the world menu, to return to the menu.
+     * and the mouseInfo to check where it is clicked.
+     */
     public RecordM(World w)
     {    
         super(800, 600, 1); 
-         /**
-          * in this part we used the variable bSalir to go back to menu
-          * 
-            */
+         
         bSalir = new Salir();
 
         wm= w;
@@ -42,27 +39,29 @@ public class RecordM extends World
         
     }
     
+    /**
+     * This method is used whenever the run button is clicked, it only checks whether 
+     * if the user is clicking on the "Exit" button.
+     */
     public void act(){
-     m=Greenfoot.getMouseInfo(); 
+        m=Greenfoot.getMouseInfo(); 
  
-     sonido.play();
+        sonido.play();
      
       
-     if(!sonido.isPlaying()){
-        sonido.play();
+        if(!sonido.isPlaying()){
+            sonido.play();
         }
-     if(Greenfoot.mouseClicked(bSalir)){
-        //bStart.juega();
-        sonido.stop();
-        sonidoB.play();
-        Greenfoot.setWorld(wm); 
-     }
-    
-   
-     
+        if(Greenfoot.mouseClicked(bSalir)){
+            //bStart.juega();
+            sonido.stop();
+            sonidoB.play();
+            Greenfoot.setWorld(wm); 
+        }
     }
+    
     /**
-     * in this part  only add the objects to menu, like bottons and the ScoreBoard
+     * This method is used to draw the objects in the world
      */
     public void dibujaEntorno(){
        addObject(bSalir,700,550);
