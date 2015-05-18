@@ -7,36 +7,92 @@ import greenfoot.*;
  */
 public class Mundo extends KinectWorld
 {
-    private final int ancho=800; //se crea consatnte el ancho y el alto
-    private final int alto=600;
-    private final int centroPx=ancho/2;
-    private final int centroPy=alto/2;
-    private SimpleTimer t;
-    private Aviso aviso;
-    private int band;   
-    private GreenfootSound sonido;   
+    /**
+     * 
+     * Window width
+    */
+    private  static final int ANCHO=800; //se crea consatnte el ancho y el alto
+    
+    /**
+     * Window height
+     */
+    private static final int ALTO=600;
+    private static final int CENTROPX=ANCHO/2;
+    private static final int CENTROPY=ALTO/2;
+    
+    /**
+     * Constants for the kinect thumbnail
+     */
     public static final double SCALE = 4.0;
     private static final int THUMBNAIL_WIDTH = 80;
     private static final int THUMBNAIL_HEIGHT = 60;
+    
+    /**
+     * The timer for the game
+     */
+    private SimpleTimer t;
+    
+    /**
+     * The signal at the start of the game
+     */
+    private Aviso aviso;
+    private int band;
+    
+    /**
+     * Music
+     */
+    private GreenfootSound sonido;   
+    
+    /**
+     * User information
+     */
     private Stick stick;
     private UserData[] users;
+    
+    /**
+     * The plates to catch the food
+     */
     private Plato p1;
     private Plato p2;
+    
+    /**
+     * Score variables
+     */
     private int puntaje;
     private int valorComidaSana;
     private int valorComidaMala;
+    
+    /**
+     * Number of objects in the world.
+     */
     private int numObjetos;
     private Suelo suelo;
+    
+    /**
+     * Fall velocity variables
+     */
     private int vel4;
     private int vel3;
     private int vel2;
     private int vel1;
+    
+    /**
+     * Text for error if the Kinect is not connected
+     */
     private TError errorNE;
+    
+    /**
+     * Level variables
+     */
     private Nivel1 n1;
     private Nivel2 n2;
     private Nivel3 n3;
     private Nivel4 n4;
     private int nivel;
+    
+    /**
+     * To indicate whether if he sound has been created
+     */
     private int soundP=0;
     SimpleTimer timer;
     
@@ -78,7 +134,7 @@ public class Mundo extends KinectWorld
         p1=new Plato();
         p2=new Plato();
         suelo=new Suelo();
-        addObject(suelo,centroPx,600);
+        addObject(suelo,CENTROPX,600);
         addObject(p1,400,500);
         addObject(p2,400,500);
         stick = new Stick(0,p1,p2);
@@ -167,7 +223,7 @@ public class Mundo extends KinectWorld
 
         if(band==0){
             t.mark();
-            addObject(aviso,centroPx,centroPy);
+            addObject(aviso,CENTROPX,CENTROPY);
             aviso.setImage("1.png");
             aviso.setImage(aviso.imagen(200,200));
             band=2;

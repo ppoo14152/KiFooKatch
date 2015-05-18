@@ -1,7 +1,9 @@
 import greenfoot.*;
 
 /**
+ * Class downloaded from www.greenfoot.org/doc/kinect
  * The data for a user (i.e. person in front of the sensor).
+ * 
  */
 public class UserData
 {

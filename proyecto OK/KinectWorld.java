@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 /**
+ * Class downloaded from www.greenfoot.org/doc/kinect
  * The basic world class for Kinect scenarios.
  *
  * Rather than use this as-is, you will need to make a sub-class

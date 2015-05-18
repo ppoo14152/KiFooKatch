@@ -1,10 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Stick here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Class downloaded from www.greenfoot.org/doc/kinect
+ * Slightly modifies by Valeria Cortez
  */
 public class Stick  extends Actor
 {

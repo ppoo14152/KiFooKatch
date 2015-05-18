@@ -13,6 +13,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
+ * Class downloaded from www.greenfoot.org/doc/kinect
  * A client that reads data from the Kinect server via a socket.
  */
 public class KinectClient  

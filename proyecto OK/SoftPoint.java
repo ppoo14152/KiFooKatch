@@ -2,9 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * SoftPoint - .
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Class downloaded from www.greenfoot.org/doc/kinect
  */
 public class SoftPoint 
 {

@@ -1,5 +1,8 @@
 /**
+ * 
+ * Class downloaded from www.greenfoot.org/doc/kinect
  * A simple three-dimensional point class.
+ * 
  */
 public class Point3D
 {

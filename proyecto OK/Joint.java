@@ -1,6 +1,7 @@
 import java.util.Comparator;
 
 /**
+ * Class downloaded from www.greenfoot.org/doc/kinect
  * Data for a joint in a skeleton for a tracked user.
  */
 public class Joint
