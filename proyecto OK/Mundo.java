@@ -279,8 +279,7 @@ public class Mundo extends KinectWorld
         Comida varObjeto=new Comida();
         for(i=0;aux<30;i++){
             rand=Greenfoot.getRandomNumber(17);
-            if(timer.millisElapsed()>1000)
-            {
+          
                 switch(rand)
                 {
                     case 1:
@@ -445,8 +444,7 @@ public class Mundo extends KinectWorld
 
                 }
                 
-                timer.mark();
-            }
+                
         }
 
     }
