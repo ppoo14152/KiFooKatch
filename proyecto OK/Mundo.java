@@ -61,6 +61,7 @@ public class Mundo extends KinectWorld
     private int puntaje;
     private int valorComidaSana;
     private int valorComidaMala;
+    private int p;
     
     /**
      * Number of objects in the world.
@@ -89,6 +90,7 @@ public class Mundo extends KinectWorld
     private Nivel3 n3;
     private Nivel4 n4;
     private int nivel;
+    private int count;
     
     /**
      * To indicate whether if he sound has been created
@@ -113,6 +115,9 @@ public class Mundo extends KinectWorld
         vel2=5;
         vel1=20;
         nivel=2;
+        p=0;
+        count=0;
+        
         
         n1=new Nivel1();
         n2=new Nivel2();
@@ -162,6 +167,7 @@ public class Mundo extends KinectWorld
     public void act(){
 
         super.act();
+        
         if(!isConnected()){
             
             errorNoConectado();            
@@ -178,38 +184,56 @@ public class Mundo extends KinectWorld
             addObject(n1, 400,150);
         }
         if(numObjetos==12){
-            if(nivel==2)
+            count++;
+            if(nivel==2&&count==5&&p==0)
             {
                 removeObject(n1);
                 nivel=3; 
                 addObject(n2, 400,150);
                 creaComida(vel2);
+               
+                
+            }
+            else{
 
-            }else{
-
-                if(nivel==3)
+                if(nivel==3&&count==15&&p==0)
                 {
                     removeObject(n2);
                     nivel=4;
                     addObject(n3,400,150);
+                   
                     creaComida(vel3);
+                 
+                   
+                    
                 }else
-                if(nivel==4)
+                if(nivel==4&&count==30&&p==0)
                 {
                     removeObject(n3);
                     addObject(n4,400,150);
+                    
                     creaComida(vel4);
-
+                  
+                   
                 }
-
-                if(nivel==3)
-                {
-                    nivel=4;
-                    creaComida(vel3);
-                }else
-                if(nivel==4)
-                {
-                    creaComida(vel4);
+                else{
+                    switch(nivel){
+                        case 1:
+                             creaComida(vel1);
+                             break;
+                        case 2:
+                             creaComida(vel2);
+                             break;
+                        case 3:
+                             creaComida(vel3);
+                             break;
+                        case 4:
+                             creaComida(vel4);
+                             break;
+                        default:
+                             creaComida(vel4);
+                       }
+                       
                 }
 
             }  
@@ -255,6 +279,7 @@ public class Mundo extends KinectWorld
         //CUANDO PIERDA O TERMINE EL JUEGO
 
           if(puntaje<-150){
+              p=1;
             if (UserInfo.isStorageAvailable()) {
                 UserInfo myInfo = UserInfo.getMyInfo();
                 if (puntaje > myInfo.getScore()) {
