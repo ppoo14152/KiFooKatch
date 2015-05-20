@@ -188,7 +188,7 @@ public class Mundo extends KinectWorld
             addObject(n1, xn,yn);
         }
         if(numObjetos==12){
-            count++;
+            
             if(nivel==2&&count==5&&p==0)
             {
                 removeObject(n1);
@@ -487,6 +487,7 @@ public class Mundo extends KinectWorld
     public int eliminaComidaS(){
 
         if(p1.isTouchComidaS()){
+            count++;
             p1.eliminaComida();
             return valorComidaSana;
         }
