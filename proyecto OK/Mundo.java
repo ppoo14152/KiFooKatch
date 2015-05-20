@@ -91,6 +91,8 @@ public class Mundo extends KinectWorld
     private Nivel4 n4;
     private int nivel;
     private int count;
+    private int xn;
+    private int yn;
     
     /**
      * To indicate whether if he sound has been created
@@ -117,6 +119,8 @@ public class Mundo extends KinectWorld
         nivel=2;
         p=0;
         count=0;
+        xn=400;
+        yn=75;
         
         
         n1=new Nivel1();
@@ -150,7 +154,7 @@ public class Mundo extends KinectWorld
         // humano h= new humano();
         //creaComida();
         //addObject(h,400,500);
-        setBackground("madera.jpg");
+        setBackground("fondo.png");
 
         band=0;
         soundP=1;
@@ -181,7 +185,7 @@ public class Mundo extends KinectWorld
 
         numObjetos=numberOfObjects();
         if(numObjetos>12&&nivel==2){
-            addObject(n1, 400,150);
+            addObject(n1, xn,yn);
         }
         if(numObjetos==12){
             count++;
@@ -189,7 +193,7 @@ public class Mundo extends KinectWorld
             {
                 removeObject(n1);
                 nivel=3; 
-                addObject(n2, 400,150);
+                addObject(n2, xn,yn);
                 creaComida(vel2);
                
                 
@@ -200,7 +204,7 @@ public class Mundo extends KinectWorld
                 {
                     removeObject(n2);
                     nivel=4;
-                    addObject(n3,400,150);
+                    addObject(n3,xn,yn);
                    
                     creaComida(vel3);
                  
@@ -210,7 +214,7 @@ public class Mundo extends KinectWorld
                 if(nivel==4&&count==30&&p==0)
                 {
                     removeObject(n3);
-                    addObject(n4,400,150);
+                    addObject(n4,xn,yn);
                     
                     creaComida(vel4);
                   
@@ -288,6 +292,7 @@ public class Mundo extends KinectWorld
                 }
             }
             addObject(new ScoreBoard(800, 600), getWidth() / 2, getHeight() / 2);
+            stopped();
         }
         
         cayoComida();
@@ -301,6 +306,7 @@ public class Mundo extends KinectWorld
         int i=0;
         int rand;
         int aux=0; // esta variable, es un contador y  sirve para identificar que se hayan creado los diez objetos comida
+        int y=150;
         Comida varObjeto=new Comida();
         for(i=0;aux<30;i++){
             rand=Greenfoot.getRandomNumber(17);
@@ -309,7 +315,7 @@ public class Mundo extends KinectWorld
                 {
                     case 1:
                           varObjeto=new Hamburguesa(vel);
-                          addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                          addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,y);
                           if(varObjeto.tocaComida()){
                               removeObject(varObjeto);
                   
@@ -319,7 +325,7 @@ public class Mundo extends KinectWorld
                          
                    case 2:
                          varObjeto=new Naranja(vel);
-                         addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30); 
+                         addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,y); 
                          if(varObjeto.tocaComida()){
                              removeObject(varObjeto);
                 
@@ -329,7 +335,7 @@ public class Mundo extends KinectWorld
                          
                     case 3:
                          varObjeto= new Cheetos(vel);
-                         addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                         addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,y);
                          if(varObjeto.tocaComida()){
                              removeObject(varObjeto);
                 
@@ -339,7 +345,7 @@ public class Mundo extends KinectWorld
                         
                     case 4:
                         varObjeto= new Platano(vel);
-                        addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                        addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,y);
                         if(varObjeto.tocaComida()){
                            removeObject(varObjeto);
                 
@@ -349,7 +355,7 @@ public class Mundo extends KinectWorld
                     
                     case 5:
                         varObjeto=new Lechuga(vel);
-                        addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                        addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,y);
                         if(varObjeto.tocaComida()){
                             removeObject(varObjeto);
                 
@@ -359,7 +365,7 @@ public class Mundo extends KinectWorld
                    
                    case 6:
                         varObjeto=new Manzana(vel);
-                        addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                        addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,y);
                         if(varObjeto.tocaComida()){
                              removeObject(varObjeto);
                 
@@ -369,7 +375,7 @@ public class Mundo extends KinectWorld
                    
                    case 7:
                         varObjeto=new Papa(vel);
-                        addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                        addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,y);
                         if(varObjeto.tocaComida()){
                             removeObject(varObjeto);
                 
@@ -379,7 +385,7 @@ public class Mundo extends KinectWorld
                    
                    case 8:
                        varObjeto=new Uva(vel);
-                       addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                       addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,y);
                        if(varObjeto.tocaComida()){
                            removeObject(varObjeto);
                 
@@ -389,7 +395,7 @@ public class Mundo extends KinectWorld
                    
                    case 9:
                        varObjeto=new Zanahoria(vel);
-                       addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                       addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,y);
                        if(varObjeto.tocaComida()){
                            removeObject(varObjeto);
                 
@@ -399,7 +405,7 @@ public class Mundo extends KinectWorld
                    
                    case 10:
                        varObjeto=new Chips(vel);
-                       addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                       addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,y);
                        if(varObjeto.tocaComida()){
                           removeObject(varObjeto);
                 
@@ -409,7 +415,7 @@ public class Mundo extends KinectWorld
                    
                    case 11:
                        varObjeto=new Chocolate(vel);
-                       addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                       addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,y);
                        if(varObjeto.tocaComida()){
                            removeObject(varObjeto);
                 
@@ -419,7 +425,7 @@ public class Mundo extends KinectWorld
                    
                    case 12:
                        varObjeto=new Soda(vel);
-                       addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                       addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,y);
                        if(varObjeto.tocaComida()){
                            removeObject(varObjeto);
                 
@@ -429,7 +435,7 @@ public class Mundo extends KinectWorld
                    
                    case 13:
                        varObjeto=new Doritos(vel);
-                       addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                       addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,y);
                        if(varObjeto.tocaComida()){
                            removeObject(varObjeto);
                 
@@ -439,7 +445,7 @@ public class Mundo extends KinectWorld
                    
                    case 14:
                        varObjeto=new Dulces(vel);
-                       addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                       addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,y);
                        if(varObjeto.tocaComida()){
                            removeObject(varObjeto);
                 
@@ -449,7 +455,7 @@ public class Mundo extends KinectWorld
                    
                    case 15:
                        varObjeto=new HotDog(vel);
-                       addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                       addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,y);
                        if(varObjeto.tocaComida()){
                             removeObject(varObjeto);
                 
@@ -459,7 +465,7 @@ public class Mundo extends KinectWorld
                    
                    case 16:
                        varObjeto=new Pizza(vel);
-                       addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,30);
+                       addObject(varObjeto,(Greenfoot.getRandomNumber(7)*100)+100,y);
                        if(varObjeto.tocaComida()){
                            removeObject(varObjeto);
                 

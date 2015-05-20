@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Tue May 19 19:57:35 CDT 2015
+#Tue May 19 21:22:28 CDT 2015
 target49.type=ClassTarget
 target24.type=ClassTarget
 target16.name=Nivel1
@@ -143,7 +143,7 @@ target14.width=80
 target2.width=60
 dependency11.to=SimpleTimer
 target14.height=50
-target2.showInterface=true
+target2.showInterface=false
 target23.editor.height=728
 target23.typeParameters=
 target37.showInterface=true
@@ -361,7 +361,7 @@ class.ComidaMala.superclass=Comida
 target28.type=ClassTarget
 dependency3.type=UsesDependency
 class.Menu.superclass=greenfoot.World
-target13.showInterface=true
+target13.showInterface=false
 dependency48.to=Creds
 target2.y=0
 target2.x=10
@@ -833,7 +833,7 @@ target27.naviview.expanded=true
 dependency42.from=Menu
 target17.naviview.expanded=true
 target4.editor.x=0
-target33.editor.y=-8
+target33.editor.y=0
 target33.editor.x=-8
 target16.height=30
 target9.showInterface=true

@@ -34,7 +34,7 @@ public class Uva extends ComidaSana
      */
     public GreenfootImage imagen(){
         GreenfootImage i =getImage();
-        i.scale(70,50);
+        i.scale(70,70);
         return i;
     
     }

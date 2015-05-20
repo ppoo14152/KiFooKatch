@@ -35,7 +35,7 @@ public class Chips extends ComidaMala
      */
     public GreenfootImage imagen(){
         GreenfootImage i =getImage();
-        i.scale(70,50);
+        i.scale(70,70);
         return i;
     
     }
