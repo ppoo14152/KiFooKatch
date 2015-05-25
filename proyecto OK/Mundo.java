@@ -166,7 +166,7 @@ public class Mundo extends KinectWorld
         band=0;
         soundP=1;
         sonido=new GreenfootSound("mundo.mid");
-        count=new Counter("Act Cycles: ");
+        count=new Counter("Puntaje: ");
         addObject(count, 100, 100);
         
     }
