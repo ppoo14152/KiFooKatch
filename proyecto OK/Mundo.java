@@ -219,7 +219,7 @@ public class Mundo extends KinectWorld
             creaComida(vel3);
             timer.mark();
             removeObject(n2);
-            if(puntaje>=110)nivel=4; 
+            if(puntaje>=200)nivel=4; 
             if(band3==1){
                 addObject(n3, xn,yn);
                 band3=0;
@@ -240,14 +240,14 @@ public class Mundo extends KinectWorld
         removeObject(n3);
         addObject(n4,xn,yn);
         }*/
-
+        
 
         puntaje=puntaje+eliminaComidaS();
         puntaje=puntaje+
 
         eliminaComidaM();
         //System.out.println("numero objetos"+numObjetos);
-        System.out.println("punteje "+puntaje);
+        System.out.println("puntaje "+puntaje);
         if(!sonido.isPlaying()){
             sonido.play();
         }
@@ -285,7 +285,7 @@ public class Mundo extends KinectWorld
 
         //CUANDO PIERDA O TERMINE EL JUEGO
 
-        if(puntaje<-150){
+        if(puntaje<-150||puntaje==300){
             p=1;
             if (UserInfo.isStorageAvailable()) {
                 UserInfo myInfo = UserInfo.getMyInfo();
