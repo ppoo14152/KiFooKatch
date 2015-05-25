@@ -98,6 +98,7 @@ public class Mundo extends KinectWorld
     private int xn;
     private int yn; 
     private Counter count;
+    private int chatarra;
     /**
      * To indicate whether if he sound has been created
      */
@@ -123,6 +124,8 @@ public class Mundo extends KinectWorld
         vel1=20;
         nivel=1;
         p=0;
+        chatarra=0;
+        
 
         xn=400;
         yn=75;
@@ -285,7 +288,7 @@ public class Mundo extends KinectWorld
 
         //CUANDO PIERDA O TERMINE EL JUEGO
 
-        if(puntaje<-150||puntaje==300){
+        if(puntaje<-150||puntaje==300||chatarra==10){
             p=1;
             if (UserInfo.isStorageAvailable()) {
                 UserInfo myInfo = UserInfo.getMyInfo();
@@ -503,12 +506,15 @@ public class Mundo extends KinectWorld
      * @return The value to decrease the score.
      */
     public int eliminaComidaM(){
+        
 
         if(p1.isTouchComidaM()){
+            chatarra++;
             p1.eliminaComida();
             return valorComidaMala;
         }
         if(p2.isTouchComidaM()){
+            chatarra++;
             p2.eliminaComida();
             return valorComidaMala;
         }
